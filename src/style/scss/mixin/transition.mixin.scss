@@ -1,0 +1,7 @@
+/**
+ * Transition Mixin
+ */
+
+@mixin transition($args...) {
+  transition: $args;
+}

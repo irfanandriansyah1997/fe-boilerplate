@@ -1,0 +1,36 @@
+/**
+ * Font Size Variable
+ */
+
+// $font-primary: 'SF Pro Display', sans-serif;
+$font-primary: 'Avenir Next', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+$font-code: 'Fira Code', monospace;
+
+$font-size-general: (
+  heading-1: 80px,
+  heading-2: 60px,
+  heading-3: 30px,
+  heading-4: 24px,
+  large: 24px,
+  medium: 20px,
+  caption: 18px,
+  normal: 16px,
+  small: 12px
+);
+
+/**
+ * Font Weight Variable
+ */
+
+$font-weight-general: (
+  'hairline': 100,
+  'thin': 200,
+  'light': 300,
+  'normal': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+  'extrabold': 800,
+  'black': 900
+);

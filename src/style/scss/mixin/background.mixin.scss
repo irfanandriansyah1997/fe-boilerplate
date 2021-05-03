@@ -1,0 +1,51 @@
+/**
+ * Background Mixin
+ */
+
+@mixin background-image(
+  $path,
+  $position: 0 0,
+  $repeat: no-repeat,
+  $size: cover
+) {
+  background: {
+    image: url($path);
+    position: $position;
+    repeat: $repeat;
+    size: $size;
+  }
+}
+
+@mixin background-color($hex) {
+  background-color: get-color($hex);
+}
+
+@mixin no-background() {
+  background: transparent;
+}
+
+@mixin linear-gradient($start-color: #555, $end-color: #333, $deg: 45deg) {
+  $color1: get-color($start-color);
+  $color2: get-color($end-color);
+
+  background: linear-gradient($deg, $color1, $color2);
+  background-repeat: repeat-x;
+}
+
+@mixin linear-gradient-multi($direction, $color-stops...) {
+  @if is-direction($direction) == false {
+    $color-stops: ($direction, $color-stops);
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: linear-gradient($direction, $color-stops);
+}
+
+/**
+ * Opacity Mixin
+ */
+
+@mixin opacity($value) {
+  opacity: $value;
+}

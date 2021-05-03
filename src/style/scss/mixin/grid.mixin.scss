@@ -1,0 +1,66 @@
+$grid-columns: 12;
+
+@mixin generate-grid($type) {
+  @if $type==default {
+    @for $i from 1 through $grid-columns {
+      .a-col-#{$i} {
+        @include generate-attribute-grid($i);
+      }
+    }
+
+    .a-col-1,
+    .a-col-2,
+    .a-col-3,
+    .a-col-4,
+    .a-col-5,
+    .a-col-6,
+    .a-col-7,
+    .a-col-8,
+    .a-col-9,
+    .a-col-10,
+    .a-col-11,
+    .a-col-12 {
+      min-height: 1px;
+    }
+
+    .a-col {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+      min-height: 1px;
+    }
+  } @else {
+    @for $i from 1 through $grid-columns {
+      .a-col-#{$type}-#{$i} {
+        @include generate-attribute-grid($i);
+      }
+    }
+
+    .a-col-#{$type}-1,
+    .a-col-#{$type}-2,
+    .a-col-#{$type}-3,
+    .a-col-#{$type}-4,
+    .a-col-#{$type}-5,
+    .a-col-#{$type}-6,
+    .a-col-#{$type}-7,
+    .a-col-#{$type}-8,
+    .a-col-#{$type}-9,
+    .a-col-#{$type}-10,
+    .a-col-#{$type}-11,
+    .a-col-#{$type}-12 {
+      min-height: 1px;
+    }
+
+    .a-col-#{$type} {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+      min-height: 1px;
+    }
+  }
+}
+
+@mixin generate-attribute-grid($i) {
+  flex: 0 0 percentage($i / $grid-columns);
+  max-width: percentage($i / $grid-columns);
+}

@@ -1,0 +1,7 @@
+@function get-shadow($shadow) {
+  @if map_has_key($shadow-general, $shadow) {
+    @return map_get($shadow-general, $shadow);
+  }
+
+  @return $shadow;
+}
