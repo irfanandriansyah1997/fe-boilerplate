@@ -1,10 +1,21 @@
-import { FC } from 'react';
+import { IConstruct, Routing } from '@/modules/routing';
+
+import MainRouting from './routing/main.routing';
 
 /**
  * Apps
  * @author Irfan Andriansyah <irfan@99.co>
- * @since 2021.05.03
+ * @description for register all routing on this apps
+ * @since 2021.02.28
  */
-const Apps: FC = () => <div>Hello World</div>;
+class Apps extends Routing {
+  /**
+   * Modules
+   * @return {IConstruct[]}
+   */
+  get modules(): IConstruct[] {
+    return [MainRouting];
+  }
+}
 
 export default Apps;
