@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/helper/*": ["src/library/helper/*"],
+      "@/helper": ["src/library/helper/index.ts"],
+      "@/modules/*": ["src/library/modules/*"],
+      "@/assets/*": ["src/assets/*"],
+      "@/library/*": ["src/library/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/routing/*": ["src/routing/*"],
+      "@/style/*": ["src/style/*"],
+      "@/*": ["src/*"]
+    }
+  }
+}
