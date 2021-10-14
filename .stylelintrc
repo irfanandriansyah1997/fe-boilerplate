@@ -1,0 +1,51 @@
+{
+    "extends": [
+        "stylelint-prettier/recommended",
+    ],
+    "plugins": [
+        "stylelint-prettier",
+        "stylelint-order"
+    ],
+    "ignoreFiles": [
+        "**/*.js",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.json"
+    ],
+    "rules": {
+        "order/order": [
+            "custom-properties",
+            "declarations"
+        ],
+        selector-class-pattern: null,
+        "order/properties-alphabetical-order": true,
+        "function-parentheses-space-inside": "never",
+        "selector-max-compound-selectors": 4,
+        "max-nesting-depth": [
+            6,
+            {
+                "ignoreAtRules": [
+                    "each",
+                    "media",
+                    "supports",
+                    "include"
+                ]
+            }
+        ],
+        "prettier/prettier": [
+            true,
+            {
+                "singleQuote": true
+            }
+        ],
+        "at-rule-no-unknown": [null, {
+            "ignoreAtRules": ["xl"]
+        }],
+        "string-quotes": "single",
+        "unit-no-unknown": null,
+        "max-empty-lines": 2,
+        "indentation": 2,
+        "no-descending-specificity": null,
+        "number-leading-zero": null
+    }
+}

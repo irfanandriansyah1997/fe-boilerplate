@@ -1,0 +1,11 @@
+.custom-component {
+  align-items: center;
+  background-color: #69acec;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  top: 0;
+  width: 300px;
+}

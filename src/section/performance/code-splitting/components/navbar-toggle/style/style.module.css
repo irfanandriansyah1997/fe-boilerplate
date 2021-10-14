@@ -1,0 +1,57 @@
+.navbar-toggle {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-areas:
+    'text text'
+    'button-1 button-2';
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.navbar-toggle__text {
+  border: 1px solid #f0f0f0;
+  grid-area: text;
+  padding: 15px 30px;
+}
+
+.navbar-toggle__text h6 {
+  color: #444;
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.navbar-toggle__text p {
+  color: #888;
+  font-size: 14px;
+  margin: 0;
+  width: 300px;
+}
+
+.navbar-toggle__button {
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 15px;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.navbar-toggle__button:first-of-type {
+  grid-area: button-1;
+}
+
+.navbar-toggle__button:last-of-type {
+  grid-area: button-2;
+}
+
+.navbar-toggle__button:hover {
+  opacity: 0.75;
+}
+
+.navbar-toggle__button:hover,
+.navbar-toggle__button--active {
+  background-color: #69acec;
+  color: #fff;
+}
