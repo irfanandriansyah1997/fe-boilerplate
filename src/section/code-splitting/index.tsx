@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
+import SectionTemplates from '../../components/templates/section';
+import { SIDEBAR_MENU_CODE_SPLITTING_SECTION } from './constant';
 import CodeSplittingPart1 from './part-1';
 import CodeSplittingPart2 from './part-2';
 
@@ -29,4 +31,7 @@ const CodeSpliting: FC = () => {
   );
 };
 
-export default CodeSpliting;
+export default SectionTemplates(
+  CodeSpliting,
+  SIDEBAR_MENU_CODE_SPLITTING_SECTION
+);

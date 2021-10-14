@@ -1,9 +1,9 @@
-import { IHeaderItem } from '../interface';
+import { IMenuItem } from '../../../../interface/component';
 
-export const DEFAULT_HEADER: IHeaderItem[] = [
+export const DEFAULT_HEADER: IMenuItem[] = [
   {
     text: `Code Spliting`,
-    to: `/code-spliting`
+    to: `/code-splitting`
   },
   {
     text: `React Pattern`,

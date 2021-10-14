@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Header menu={DEFAULT_HEADER} />
         <Switch>
-          <Route path="/code-spliting">
+          <Route path="/code-splitting">
             <CodeSplittingRouter />
           </Route>
         </Switch>
