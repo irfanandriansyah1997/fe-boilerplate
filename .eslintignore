@@ -1,0 +1,7 @@
+etc
+dist
+node_modules/
+jest.config.js
+babel.config.js
+commitlint.config.js
+.next
