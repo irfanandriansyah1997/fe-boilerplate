@@ -5,5 +5,7 @@
  */
 export interface INavbarToggleProps {
   active: boolean;
+  onFocus?(): void;
+  onMouseOver?(): void;
   onToggle(active: boolean): void;
 }

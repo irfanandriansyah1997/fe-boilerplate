@@ -9,7 +9,12 @@ import { INavbarToggleProps } from './interface';
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.14
  */
-const NavbarToggle: FC<INavbarToggleProps> = ({ active, onToggle }) => {
+const NavbarToggle: FC<INavbarToggleProps> = ({
+  active,
+  onFocus,
+  onMouseOver,
+  onToggle
+}) => {
   /**
    * Event Handler On Click Button
    * @param {boolean} show - payload toogle on click button
@@ -33,8 +38,10 @@ const NavbarToggle: FC<INavbarToggleProps> = ({ active, onToggle }) => {
         </p>
       </div>
       <button
-        onClick={onClickButton(true)}
         type="button"
+        onFocus={onFocus}
+        onMouseEnter={onMouseOver}
+        onClick={onClickButton(true)}
         className={objToString({
           [style[`navbar-toggle__button`]]: true,
           [style[`navbar-toggle__button--active`]]: active
@@ -43,8 +50,10 @@ const NavbarToggle: FC<INavbarToggleProps> = ({ active, onToggle }) => {
         Active
       </button>
       <button
-        onClick={onClickButton(false)}
         type="button"
+        onFocus={onFocus}
+        onMouseEnter={onMouseOver}
+        onClick={onClickButton(false)}
         className={objToString({
           [style[`navbar-toggle__button`]]: true,
           [style[`navbar-toggle__button--active`]]: !active

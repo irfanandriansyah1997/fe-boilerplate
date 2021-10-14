@@ -1,7 +1,7 @@
 .navbar-toggle {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0px 16px rgb(0 0 0 / 8%);
   display: grid;
   grid-template-areas:
     'text text'
@@ -17,13 +17,13 @@
 }
 
 .navbar-toggle__text h6 {
-  color: #444;
+  color: var(--title);
   font-size: 24px;
   margin: 0 0 10px;
 }
 
 .navbar-toggle__text p {
-  color: #888;
+  color: var(--text);
   font-size: 14px;
   margin: 0;
   width: 300px;
@@ -52,6 +52,6 @@
 
 .navbar-toggle__button:hover,
 .navbar-toggle__button--active {
-  background-color: #69acec;
+  background-color: var(--blue);
   color: #fff;
 }

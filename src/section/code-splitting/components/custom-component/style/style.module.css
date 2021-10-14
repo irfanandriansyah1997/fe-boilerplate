@@ -1,11 +1,14 @@
 .custom-component {
   align-items: center;
-  background-color: #69acec;
+  background-color: var(--blue);
+  border: 30px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
   color: #fff;
   display: flex;
+  font-weight: 500;
   height: 300px;
   justify-content: center;
+  letter-spacing: 0.5px;
   top: 0;
   width: 300px;
 }

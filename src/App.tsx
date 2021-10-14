@@ -1,7 +1,9 @@
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './style/apps.css';
-import PerformanceRouting from './section/performance';
+import Header from './components/organisms/header';
+import { DEFAULT_HEADER } from './components/organisms/header/constant';
+import CodeSplittingRouter from './section/code-splitting';
 
 /**
  * Main Apps Routing
@@ -10,18 +12,12 @@ import PerformanceRouting from './section/performance';
  */
 function App() {
   return (
-    <div
-      style={{
-        alignItems: `center`,
-        display: `flex`,
-        justifyContent: `center`,
-        padding: 20
-      }}
-    >
+    <div style={{ paddingTop: 160 }}>
       <Router>
+        <Header menu={DEFAULT_HEADER} />
         <Switch>
-          <Route path="/performance">
-            <PerformanceRouting />
+          <Route path="/code-spliting">
+            <CodeSplittingRouter />
           </Route>
         </Switch>
       </Router>
