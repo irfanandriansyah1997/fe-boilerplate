@@ -1,9 +1,11 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 :root {
-  --title: #1a2258;
+  --title: #222b45;
+  --border: rgba(85, 102, 119, 0.18);
   --blue: #2392ec;
   --text: #787d9c;
+  --body: #f1f3f5;
 }
 
 /* Document
@@ -27,7 +29,7 @@ html {
    */
 
 body {
-  background-color: #fafafa;
+  background-color: var(--body);
   font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
   line-height: 1.5;
   margin: 0;

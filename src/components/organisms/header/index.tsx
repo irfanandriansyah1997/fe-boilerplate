@@ -1,3 +1,4 @@
+import { objToString, verifiedIsNotFalse } from '@99/helper';
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -15,11 +16,14 @@ const Header: FC<IHeaderProps> = ({ menu }) => (
       React <span>Cheatsheet</span>
     </h6>
     <div className={styles[`o-header__menu`]}>
-      {menu.map(({ text, to }) => (
+      {menu.map(({ isPrimary, text, to }) => (
         <NavLink
           to={to}
           key={`${to}-${text}`}
-          className={styles[`o-header__item`]}
+          className={objToString({
+            [styles[`o-header__item`]]: true,
+            [styles[`o-header__item--primary`]]: verifiedIsNotFalse(isPrimary)
+          })}
           activeClassName={styles[`o-header__item--active`]}
         >
           {text}
