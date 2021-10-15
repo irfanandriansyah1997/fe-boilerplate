@@ -1,6 +1,12 @@
 .t-section-item {
+  background-blend-mode: difference !important;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
   display: block;
-  height: calc(100vh - 125px);
+  height: calc(100vh - 115px);
   overflow-y: auto;
   width: 100%;
 }
@@ -11,17 +17,54 @@
 }
 
 .t-section-item--with-markdown .t-section-item__content {
-  width: calc(100% - 500px);
+  box-sizing: border-box;
+  padding-left: 345px;
+  width: calc(100% - 725px);
 }
 
 .t-section-item__markdown {
   background-color: #fff;
-  height: 100%;
+  border-left: 1px solid var(--border);
+  box-sizing: border-box;
+  height: calc(100% - 115px);
   overflow-y: auto;
-  padding: 150px 25px 25px;
-  padding-top: 125px;
+  padding: 25px 50px;
   position: fixed;
   right: 0;
-  top: 0;
-  width: 500px;
+  top: 115px;
+  width: 700px;
+}
+
+.t-section-item__markdown hr {
+  border: 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.t-section-item__markdown h1,
+.t-section-item__markdown h2,
+.t-section-item__markdown h3,
+.t-section-item__markdown h4,
+.t-section-item__markdown h5,
+.t-section-item__markdown h6 {
+  border-bottom: 1px dashed var(--border);
+  color: var(--title);
+  padding: 5px 0;
+}
+
+.t-section-item__markdown,
+.t-section-item__markdown p,
+.t-section-item__markdown span,
+.t-section-item__markdown li {
+  color: var(--text);
+}
+
+.t-section-item__markdown ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.t-section-item__markdown a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
 }

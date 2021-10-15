@@ -13,7 +13,7 @@ import Homepage from './section/homepage';
  */
 function App() {
   return (
-    <div style={{ paddingTop: 125 }}>
+    <div style={{ paddingTop: 115 }}>
       <Router>
         <Header menu={DEFAULT_HEADER} />
         <Switch>

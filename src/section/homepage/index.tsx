@@ -22,7 +22,10 @@ const Homepage: FC = () => {
           targets React v15 to v16.
         </p>
       </div>
-      <MasonryLayout item={response} component={HomepageCard} maxGrid={4} />
+      <div className={style.homepage__section}>
+        <h2>Performance</h2>
+        <MasonryLayout item={response} component={HomepageCard} maxGrid={4} />
+      </div>
     </div>
   );
 };
