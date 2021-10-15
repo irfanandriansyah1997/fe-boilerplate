@@ -1,6 +1,8 @@
 import { FC, lazy, Suspense, useState } from 'react';
 
+import SectionItemTemplates from '../../components/templates/section-item';
 import NavbarToggle from './components/navbar-toggle';
+import docs from './docs/part-1.docs.md';
 import style from './style/part-1.module.css';
 
 const CustomComponent = lazy(() => import(`./components/custom-component`));
@@ -12,6 +14,7 @@ const CustomComponent = lazy(() => import(`./components/custom-component`));
  */
 const CodeSplittingPart1: FC = () => {
   const [showCustomComponent, toggleShowCustomComponent] = useState(false);
+
   return (
     <div className={style[`part-1`]}>
       <NavbarToggle
@@ -25,4 +28,4 @@ const CodeSplittingPart1: FC = () => {
   );
 };
 
-export default CodeSplittingPart1;
+export default SectionItemTemplates(CodeSplittingPart1, docs);

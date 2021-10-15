@@ -1,6 +1,8 @@
 import { FC, lazy, Suspense, useState } from 'react';
 
+import SectionItemTemplates from '../../components/templates/section-item';
 import NavbarToggle from './components/navbar-toggle';
+import docs from './docs/part-2.docs.md';
 import style from './style/part-2.module.css';
 
 /**
@@ -34,4 +36,4 @@ const CodeSplittingPart2: FC = () => {
   );
 };
 
-export default CodeSplittingPart2;
+export default SectionItemTemplates(CodeSplittingPart2, docs);

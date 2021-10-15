@@ -1,0 +1,27 @@
+.t-section-item {
+  display: block;
+  height: calc(100vh - 125px);
+  overflow-y: auto;
+  width: 100%;
+}
+
+.t-section-item__content {
+  padding-top: 35px;
+  width: 100%;
+}
+
+.t-section-item--with-markdown .t-section-item__content {
+  width: calc(100% - 500px);
+}
+
+.t-section-item__markdown {
+  background-color: #fff;
+  height: 100%;
+  overflow-y: auto;
+  padding: 150px 25px 25px;
+  padding-top: 125px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 500px;
+}
