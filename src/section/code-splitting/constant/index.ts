@@ -1,6 +1,6 @@
-import { ISidebarProps } from '../../../components/organisms/sidebar/interface';
+import { IMenu } from '../../../interface/component';
 
-export const SIDEBAR_MENU_CODE_SPLITTING_SECTION: ISidebarProps = {
+export const SIDEBAR_MENU_CODE_SPLITTING_SECTION: IMenu = {
   menu: [
     {
       text: `Basic Code Splitting`,

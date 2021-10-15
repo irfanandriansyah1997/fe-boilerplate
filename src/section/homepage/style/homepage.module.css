@@ -1,0 +1,26 @@
+.homepage {
+  margin: auto;
+  max-width: 1280px;
+  width: 100%;
+}
+
+.homepage__heading {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.homepage__heading h1,
+.homepage__heading p {
+  margin: 0;
+}
+
+.homepage__heading h1 {
+  color: var(--title);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.homepage__heading p {
+  color: var(--text);
+  font-size: 18px;
+}

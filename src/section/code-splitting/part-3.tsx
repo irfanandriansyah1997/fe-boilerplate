@@ -20,6 +20,7 @@ const CustomComponent = lazy(loadCustomComponent);
  */
 const CodeSplittingPart3: FC = () => {
   const [showCustomComponent, toggleShowCustomComponent] = useState(false);
+
   return (
     <div className={style[`part-2`]}>
       <NavbarToggle
