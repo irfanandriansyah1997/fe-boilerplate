@@ -16,7 +16,7 @@ const CustomComponent = lazy(() => import(`./components/custom-component`));
 ### 2. Register Suspense
 Langkah selanjutnya yang harus dilakukan adalah memasang `React.Suspense`, hal ini berguna untuk memberikan overlay pada saat component sedang di load secara paralel.
 
-```ts
+```js
 import { FC, lazy, Suspense, useState } from 'react';
 
 import NavbarToggle from './components/navbar-toggle';
