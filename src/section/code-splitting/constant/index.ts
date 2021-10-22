@@ -16,5 +16,5 @@ export const SIDEBAR_MENU_CODE_SPLITTING_SECTION: IMenu = {
     }
   ],
   subtitle: `Cheat Sheet Implement Code Splitting On React JS`,
-  title: `Code Splitting`
+  title: `⏳ Code Splitting`
 };

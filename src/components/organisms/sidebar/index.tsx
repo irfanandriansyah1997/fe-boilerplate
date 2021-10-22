@@ -1,17 +1,29 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { IMenu } from '../../../interface/component';
 import styles from './style/style.module.css';
+import { ISidebarProps } from './interface';
 
 /**
  * Sidebar Component
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.14
  */
-const Sidebar: FC<IMenu> = ({ menu, subtitle, title }) => (
+const Sidebar: FC<ISidebarProps> = ({ menu, onClickBack, subtitle, title }) => (
   <div className={styles[`o-sidebar`]}>
-    <h6>{title}</h6>
+    <h6>
+      <button
+        type="button"
+        className="material-icons"
+        onClick={(e): void => {
+          e.preventDefault();
+          onClickBack();
+        }}
+      >
+        arrow_back
+      </button>
+      {title}
+    </h6>
     <p>{subtitle}</p>
     <div className={styles[`o-sidebar__menu`]}>
       {menu.map(({ text, to }) => (

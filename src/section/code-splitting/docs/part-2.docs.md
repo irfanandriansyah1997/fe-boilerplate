@@ -1,107 +1,77 @@
-# A demo of `react-markdown`
+## ⏳ Eager Load
 
-`react-markdown` is a markdown component for React.
+setelah kita telah melakukan `code splitting` agar browser hanya melakukan pengunduhan JS yang dibutuhkan, akan tetapi apabila sebuah chunks mempunyai ukuran yang cukup besar makan pada saat melakukan load component akan terdapat `jaggy` atau seperti ada kesan perubahan scroll secara mendadak.
 
-👉 Changes are re-rendered as you type.
+Maka dari itu perlu adanya `eager load`, `eager load` adalah sebuah metode dimana kita akan melakukan pengunduhan `chunks` lebih awal sesuai dengan trigger yang telah ditentukan.
 
-👈 Try writing some markdown on the left.
-
-## Overview
-
-* Follows [CommonMark](https://commonmark.org)
-* Optionally follows [GitHub Flavored Markdown](https://github.github.com/gfm/)
-* Renders actual React elements instead of using `dangerouslySetInnerHTML`
-* Lets you define your own components (to render `MyHeading` instead of `h1`)
-* Has a lot of plugins
-
-## Table of contents
-
-Here is an example of a plugin in action
-([`remark-toc`](https://github.com/remarkjs/remark-toc)).
-This section is replaced by an actual table of contents.
-
-## Syntax highlighting
-
-Here is an example of a plugin to highlight code:
-[`rehype-highlight`](https://github.com/rehypejs/rehype-highlight).
+### 1. Ubah Metode Load Component
+Hal pertama yang dilakukan adalah mengubah cara load sebuah component, agar lebih mudah cukup buat sebuah function yang berisi hasil `import component`.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import ReactMarkdown from 'react-markdown'
-import rehypeHighlight from 'rehype-highlight'
+import { lazy } from 'react';
 
-ReactDOM.render(
-  <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{'# Your markdown here'}</ReactMarkdown>,
-  document.querySelector('#content')
-)
+/**
+ * Load Custom Component
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.10.14
+ */
+const loadCustomComponent = () => import(`./components/custom-component`);
+
+const CustomComponent = lazy(loadCustomComponent);
 ```
 
-Pretty neat, eh?
-
-## GitHub flavored markdown (GFM)
-
-For GFM, you can *also* use a plugin:
-[`remark-gfm`](https://github.com/remarkjs/react-markdown#use).
-It adds support for GitHub-specific extensions to the language:
-tables, strikethrough, tasklists, and literal URLs.
-
-These features **do not work by default**.
-👆 Use the toggle above to add the plugin.
-
-| Feature    | Support              |
-| ---------: | :------------------- |
-| CommonMark | 100%                 |
-| GFM        | 100% w/ `remark-gfm` |
-
-~~strikethrough~~
-
-* [ ] task list
-* [x] checked item
-
-https://example.com
-
-## HTML in markdown
-
-⚠️ HTML in markdown is quite unsafe, but if you want to support it, you can
-use [`rehype-raw`](https://github.com/rehypejs/rehype-raw).
-You should probably combine it with
-[`rehype-sanitize`](https://github.com/rehypejs/rehype-sanitize).
-
-<blockquote>
-  👆 Use the toggle above to add the plugin.
-</blockquote>
-
-## Components
-
-You can pass components to change things:
+### 2. Daftarkan Trigger Untuk Melakukan Eager Load
+Hal kedua adalah melakukan update props navbar toggle component, didalam component tersebut terdapat beberapa props yang nantinya akan menjadi trigger browser akan load chunks file.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import ReactMarkdown from 'react-markdown'
-import MyFancyRule from './components/my-fancy-rule.js'
+import { FC, lazy, Suspense, useState } from 'react';
 
-ReactDOM.render(
-  <ReactMarkdown
-    components={{
-      // Use h2s instead of h1s
-      h1: 'h2',
-      // Use a component instead of hrs
-      hr: ({node, ...props}) => <MyFancyRule {...props} />
-    }}
-  >
-    # Your markdown here
-  </ReactMarkdown>,
-  document.querySelector('#content')
-)
+import NavbarToggle from './components/navbar-toggle';
+import style from './style/part-2.module.css';
+
+/**
+ * Load Custom Component
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.10.14
+ */
+const loadCustomComponent = () => import(`./components/custom-component`);
+
+const CustomComponent = lazy(loadCustomComponent);
+
+/**
+ * Code Splitting Part 2
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.10.14
+ */
+const CodeSplittingPart2: FC = () => {
+  const [showCustomComponent, toggleShowCustomComponent] = useState(false);
+
+  return (
+    <div className={style[`part-2`]}>
+      <NavbarToggle
+        active={showCustomComponent}
+        onFocus={loadCustomComponent}
+        onMouseOver={loadCustomComponent}
+        onToggle={toggleShowCustomComponent}
+      />
+      <Suspense fallback={<div>Loading...</div>}>
+        {showCustomComponent && <CustomComponent />}
+      </Suspense>
+    </div>
+  );
+};
+
+export default CodeSplittingPart2;
 ```
 
-## More info?
+#### 📝 Penjelasan Code
+- **di baris 11** kita akan mebuat sebuah method yang bernama `loadCustomComponent` yang berisi hasil load chunks file (`promise`).
+- **di baris 13** kita mendaftarkan sebuah component yang di enkapsulasi oleh `React.lazy` yang nantinya akan membentuk sebuah chunks yang akan di load sesuai trigger yang telah ditentukan.
+- **di baris 21** kita membuat sebuah state yang berguna untuk melakukan toggle untuk menampilkan atau menghilangkan `CustomComponent` yang telah kita daftarkan **di baris 13**.
+- **di baris 27** kita akan mendaftarkan props `onFocus` yang akan di invoke apabila user melakukan fokus cursor ke component navbar dan props `onMouseOver` apabila user menggeserkan cursor ke component navbar. Kedua props tersebut memanggil method `loadCustomComponent` yang berguna untuk melakukan `eager load` custom component.
+- **di baris 31 - 33** kita mendaftar `React.Suspense` yang berguna untuk mengatur proses load sebuah chunks, by default apabila terjadi error atau proses load sebuah component maka yang akan dirender adalah html tag / component yang telah kita daftarkan pada props `fallback`. Sedangkan apabila telah selesai melakukan pengunduhan `chunks` tersebut yang akan ditampilkan di browser adalah component `chunks`.
 
-Much more info is available in the
-[readme on GitHub](https://github.com/remarkjs/react-markdown)!
+#### 🖥 Output
+![part-2](/gif/code-splitting/part-2.gif)
 
-***
-
-A component by [Espen Hovlandsdal](https://espen.codes/)
+> ℹ️ trigger ketika user melakukan hover pada button group `active` & `inactive`.

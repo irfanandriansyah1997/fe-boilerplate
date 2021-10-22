@@ -6,7 +6,7 @@
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
   display: block;
-  height: calc(100vh - 115px);
+  height: 100vh;
   overflow-y: auto;
   width: 100%;
 }
@@ -26,18 +26,27 @@
   background-color: #fff;
   border-left: 1px solid var(--border);
   box-sizing: border-box;
-  height: calc(100% - 115px);
+  height: 100%;
   overflow-y: auto;
   padding: 25px 50px;
   position: fixed;
   right: 0;
-  top: 115px;
+  top: 0px;
   width: 700px;
 }
 
 .t-section-item__markdown hr {
   border: 0;
   border-bottom: 1px dashed var(--border);
+}
+
+.t-section-item__markdown img {
+  background-color: var(--code);
+  border: 0px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 5px;
+  width: 100%;
 }
 
 .t-section-item__markdown h1,
@@ -49,6 +58,30 @@
   border-bottom: 1px dashed var(--border);
   color: var(--title);
   padding: 5px 0;
+}
+
+.t-section-item__markdown b,
+.t-section-item__markdown strong,
+.t-section-item__markdown code {
+  color: var(--title);
+}
+
+.t-section-item__markdown blockquote {
+  margin: 0;
+  padding: 0px 30px;
+  position: relative;
+}
+
+.t-section-item__markdown blockquote::before {
+  background-color: var(--border);
+  border-radius: 5px;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px;
 }
 
 .t-section-item__markdown,

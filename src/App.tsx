@@ -1,8 +1,6 @@
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './style/apps.css';
-import Header from './components/organisms/header';
-import { DEFAULT_HEADER } from './components/organisms/header/constant';
 import CodeSplittingRouter from './section/code-splitting';
 import Homepage from './section/homepage';
 
@@ -13,9 +11,8 @@ import Homepage from './section/homepage';
  */
 function App() {
   return (
-    <div style={{ paddingTop: 115 }}>
+    <div>
       <Router>
-        <Header menu={DEFAULT_HEADER} />
         <Switch>
           <Route path="/code-splitting">
             <CodeSplittingRouter />
