@@ -8,7 +8,7 @@ Selain menggunakan `eager load` kita juga dapat menggunakan webpack magic commen
 ### 1. Ubah Metode Load Component
 Hal pertama yang dilakukan adalah mengubah cara load sebuah component, agar lebih mudah cukup buat sebuah function yang berisi hasil `import component`.
 
-```js
+```jsx
 import { lazy } from 'react';
 
 /**

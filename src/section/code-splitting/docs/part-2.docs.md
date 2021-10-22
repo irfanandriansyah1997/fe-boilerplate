@@ -7,7 +7,7 @@ Maka dari itu perlu adanya `eager load`, `eager load` adalah sebuah metode diman
 ### 1. Ubah Metode Load Component
 Hal pertama yang dilakukan adalah mengubah cara load sebuah component, agar lebih mudah cukup buat sebuah function yang berisi hasil `import component`.
 
-```js
+```jsx
 import { lazy } from 'react';
 
 /**
@@ -23,7 +23,7 @@ const CustomComponent = lazy(loadCustomComponent);
 ### 2. Daftarkan Trigger Untuk Melakukan Eager Load
 Hal kedua adalah melakukan update props navbar toggle component, didalam component tersebut terdapat beberapa props yang nantinya akan menjadi trigger browser akan load chunks file.
 
-```js
+```jsx
 import { FC, lazy, Suspense, useState } from 'react';
 
 import NavbarToggle from './components/navbar-toggle';

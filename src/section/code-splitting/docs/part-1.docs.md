@@ -6,7 +6,7 @@ cara menggunakan code splitting sangatlah mudah yang anda butuhkan adalah melaku
 
 ### 1. Lazy Load Component
 Hal pertama yang dilakuin membuat sebuah  constant yang berisi component, ditahap ini component yang nantinya akan diimport akan di enkapsulasi oleh method `React.lazy` yang berguna untuk memberi tahu bahwa component ini akan diload kapan saja.
-```js
+```jsx
 import { lazy } from 'react';
 
 const CustomComponent = lazy(() => import(`./components/custom-component`));
@@ -16,7 +16,7 @@ const CustomComponent = lazy(() => import(`./components/custom-component`));
 ### 2. Register Suspense
 Langkah selanjutnya yang harus dilakukan adalah memasang `React.Suspense`, hal ini berguna untuk memberikan overlay pada saat component sedang di load secara paralel.
 
-```js
+```jsx
 import { FC, lazy, Suspense, useState } from 'react';
 
 import NavbarToggle from './components/navbar-toggle';

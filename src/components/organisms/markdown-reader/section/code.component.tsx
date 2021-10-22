@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
-import js from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism-light';
 import Theme from 'react-syntax-highlighter/dist/esm/styles/prism/material-oceanic';
 import remarkGfm from 'remark-gfm';
 
 import { IMarkdownContentProps } from '../interface';
 
-SyntaxHighlighter.registerLanguage(`js`, js);
+SyntaxHighlighter.registerLanguage(`jsx`, jsx);
 
 /**
  * Code Section Component
@@ -37,6 +37,16 @@ const CodeSection = ({ children, className, inline, node, ...props }: any) => {
 };
 
 /**
+ * Image Component
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.10.22
+ */
+const Image: FC<React.ImgHTMLAttributes<HTMLImageElement>> = ({
+  alt,
+  ...props
+}) => <img {...props} alt={alt} loading="lazy" decoding="async" />;
+
+/**
  * Markdown Code Component
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.15
@@ -45,7 +55,8 @@ const MarkdownCode: FC<IMarkdownContentProps> = ({ content }) => (
   <ReactMarkdown
     remarkPlugins={[remarkGfm]}
     components={{
-      code: CodeSection
+      code: CodeSection,
+      img: Image as any
     }}
   >
     {content}
