@@ -27,7 +27,7 @@ $WIDTH_CONTENT_LARGE: calc(100% - #{$WIDTH_MARKDOWN_LARGE} - 25px);
     width: 100%;
 
     @media only screen and (max-width: 1200px) {
-      padding: 50px;
+      padding: 75px 50px 50px;
     }
   }
 

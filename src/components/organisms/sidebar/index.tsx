@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import { useLayout } from '../../../hooks/layout.hooks';
 import SidebarDesktopLayout from './section/desktop-layout.component';
+import SidebarMobileLayout from './section/mobile-layout.component';
 import { ISidebarProps } from './interface';
 
 /**
@@ -9,10 +10,21 @@ import { ISidebarProps } from './interface';
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.14
  */
-const Sidebar: FC<ISidebarProps> = (props) => {
+const Sidebar: FC<ISidebarProps> = ({ ...props }) => {
   const type = useLayout();
 
-  if (type === `desktop`) return <SidebarDesktopLayout {...props} />;
+  switch (type) {
+    case `desktop`:
+      return <SidebarDesktopLayout {...props} />;
+
+    case `mobile`:
+    case `small-desktop`:
+    case `tablet`:
+      return <SidebarMobileLayout {...props} />;
+
+    default:
+      return null;
+  }
 
   return null;
 };

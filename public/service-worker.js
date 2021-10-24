@@ -14,7 +14,8 @@ self.addEventListener('fetch', (event) => {
       if (
         event.request.url.indexOf('/gif/') >= 0 ||
         event.request.url.indexOf('/png/') >= 0 ||
-        event.request.url.indexOf('/static/js/') >= 0
+        event.request.url.indexOf('/static/js/') >= 0 ||
+        event.request.url.indexOf('/static/css/') >= 0
       ) {
         const cache = await caches.open(ASSET_CACHE);
         return cache
