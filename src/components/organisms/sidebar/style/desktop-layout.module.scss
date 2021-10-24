@@ -1,0 +1,93 @@
+.o-sidebar {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 0px 16px rgba(0, 0, 0, 0.08);
+  left: 20px;
+  position: fixed;
+  top: 20px;
+  width: 300px;
+
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
+
+  h6,
+  p {
+    margin: 0;
+  }
+
+  h6 {
+    align-items: center;
+    color: var(--title);
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    padding: 0 15px 15px;
+  }
+
+  h6 > button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 0;
+  }
+
+  p {
+    color: var(--text);
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  &__item {
+    border-bottom: 1px dashed var(--border);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px;
+    padding: 10px 15px 10px 60px;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    span {
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      font-size: 18px;
+      height: 25px;
+      left: 15px;
+      line-height: 25px;
+      opacity: 0.5;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.3s;
+      width: 25px;
+    }
+
+    &:last-of-type {
+      border: 0;
+    }
+
+    &:hover,
+    &--active {
+      color: var(--blue);
+
+      span {
+        background-color: var(--blue);
+        border: 1px solid var(--blue);
+        color: white;
+        opacity: 1;
+      }
+    }
+  }
+}

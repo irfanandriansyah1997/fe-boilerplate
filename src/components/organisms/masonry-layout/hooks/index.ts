@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { IGroupingMasonry, IMasonryItem } from '../interface';
+import { useLayout } from '../../../../hooks/layout.hooks';
+import { IGroupingMasonry, IMasonryHooks, IMasonryItem } from '../interface';
 
 /**
  * Masonry Hooks
@@ -11,7 +12,10 @@ import { IGroupingMasonry, IMasonryItem } from '../interface';
 export const useMasonry = (
   item: IMasonryItem[],
   maxGrid: number
-): IGroupingMasonry[] => {
+): IMasonryHooks => {
+  const [gridCount, setGridCount] = useState(maxGrid);
+  const type = useLayout();
+
   /**
    * Generate Masonry Grid Helper
    * @author Irfan Andriansyah <irfan@99.co>
@@ -23,8 +27,8 @@ export const useMasonry = (
         (prev, current, index): IGroupingMasonry[] => {
           const temp: IGroupingMasonry[] = [...prev];
 
-          if (index >= maxGrid) {
-            const mod = index % maxGrid;
+          if (index >= gridCount) {
+            const mod = index % gridCount;
             if (temp[mod])
               temp[mod] = {
                 item: [...temp[mod].item, current],
@@ -46,7 +50,7 @@ export const useMasonry = (
         },
         []
       ),
-    [item, maxGrid]
+    [item, gridCount]
   );
 
   const [grid, setGrid] = useState<IGroupingMasonry[]>(() =>
@@ -54,8 +58,38 @@ export const useMasonry = (
   );
 
   useEffect(() => {
-    setGrid(generateMasonryGrid());
-  }, [generateMasonryGrid, item, maxGrid]);
+    setGridCount(maxGrid);
+  }, [maxGrid]);
 
-  return useMemo(() => grid, [grid]);
+  useEffect(() => {
+    switch (type) {
+      case `mobile`:
+        setGridCount(1);
+        break;
+
+      case `tablet`:
+        setGridCount(2);
+        break;
+
+      case `small-desktop`:
+      case `desktop`:
+        setGridCount(maxGrid);
+        break;
+
+      default:
+        break;
+    }
+  }, [type, grid, maxGrid]);
+
+  useEffect(() => {
+    setGrid(generateMasonryGrid());
+  }, [generateMasonryGrid, item, gridCount]);
+
+  return useMemo(
+    () => ({
+      gridCount,
+      item: grid
+    }),
+    [grid, gridCount]
+  );
 };

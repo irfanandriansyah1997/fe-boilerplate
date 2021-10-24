@@ -11,6 +11,16 @@ export interface IGroupingMasonry {
 }
 
 /**
+ * Masonry Hooks Interface
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.10.24
+ */
+export interface IMasonryHooks {
+  gridCount: number;
+  item: IGroupingMasonry[];
+}
+
+/**
  * Masonry Item Interface
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.15

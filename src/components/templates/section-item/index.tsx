@@ -2,7 +2,7 @@ import { objToString, verifiedIsNotEmpty } from '@99/helper';
 import { FC } from 'react';
 
 import MarkdownReader from '../../organisms/markdown-reader';
-import style from './style/style.module.css';
+import style from './style/style.module.scss';
 
 /**
  * Section Item Templates

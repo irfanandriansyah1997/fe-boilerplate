@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { CodeComponent } from 'react-markdown/lib/ast-to-react';
 import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism-light';
 import Theme from 'react-syntax-highlighter/dist/esm/styles/prism/material-oceanic';
@@ -14,7 +15,13 @@ SyntaxHighlighter.registerLanguage(`jsx`, jsx);
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.15
  */
-const CodeSection = ({ children, className, inline, node, ...props }: any) => {
+const CodeSection: CodeComponent = ({
+  children,
+  className,
+  inline,
+  node,
+  ...props
+}) => {
   const match = /language-(\w+)/.exec(className || ``);
 
   return !inline && match ? (
@@ -44,7 +51,7 @@ const CodeSection = ({ children, className, inline, node, ...props }: any) => {
 const Image: FC<React.ImgHTMLAttributes<HTMLImageElement>> = ({
   alt,
   ...props
-}) => <img {...props} alt={alt} loading="lazy" decoding="async" />;
+}) => <img {...props} alt={alt} loading="lazy" />;
 
 /**
  * Markdown Code Component

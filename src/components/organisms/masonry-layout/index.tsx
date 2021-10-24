@@ -14,19 +14,19 @@ const MasonryLayout: FC<IMasonryLayout> = ({
   item,
   maxGrid
 }) => {
-  const grouping = useMasonry(item, maxGrid);
+  const { gridCount, item: masonryItem } = useMasonry(item, maxGrid);
 
   return (
     <div
       className={styles[`o-masonry`]}
       style={{
-        gridTemplateColumns: `repeat(${maxGrid}, 1fr)`
+        gridTemplateColumns: `repeat(${gridCount}, 1fr)`
       }}
     >
-      {grouping.map(({ item, key }) => (
+      {masonryItem.map(({ item: masonryChild, key }) => (
         <div key={key}>
-          {item.map(({ item, key: keyItem }) => (
-            <Component key={keyItem} {...item} />
+          {masonryChild.map(({ item: masonryItemProps, key: keyItem }) => (
+            <Component key={keyItem} {...masonryItemProps} />
           ))}
         </div>
       ))}

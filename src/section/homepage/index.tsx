@@ -2,7 +2,7 @@ import { FC, useMemo } from 'react';
 
 import MasonryLayout from '../../components/organisms/masonry-layout';
 import HomepageCard from './component/home-page-card';
-import style from './style/homepage.module.css';
+import style from './style/homepage.module.scss';
 import { generateSampleLink } from './helper';
 
 /**

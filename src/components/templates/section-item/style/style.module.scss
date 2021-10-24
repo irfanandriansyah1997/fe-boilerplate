@@ -1,0 +1,152 @@
+$WIDTH_MARKDOWN: 500px;
+$WIDTH_CONTENT: calc(100% - #{$WIDTH_MARKDOWN} - 25px);
+$WIDTH_MARKDOWN_LARGE: 700px;
+$WIDTH_CONTENT_LARGE: calc(100% - #{$WIDTH_MARKDOWN_LARGE} - 25px);
+
+.t-section-item {
+  $c: &;
+
+  background-blend-mode: difference !important;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  display: block;
+  height: 100vh;
+  overflow-y: auto;
+  width: 100%;
+
+  @media only screen and (max-width: 1200px) {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  &__content {
+    padding-top: 35px;
+    width: 100%;
+
+    @media only screen and (max-width: 1200px) {
+      padding: 50px;
+    }
+  }
+
+  &--with-markdown {
+    #{$c}__content {
+      box-sizing: border-box;
+      padding-left: 345px;
+      width: #{$WIDTH_CONTENT};
+
+      @media only screen and (max-width: 1200px) {
+        padding-left: 50px;
+        width: 100%;
+      }
+
+      @media only screen and (min-width: 1680px) {
+        width: #{$WIDTH_CONTENT_LARGE};
+      }
+    }
+  }
+
+  &__markdown {
+    background-color: #fff;
+    border-left: 1px solid var(--border);
+    box-sizing: border-box;
+    color: var(--text);
+    height: 100%;
+    overflow-y: auto;
+    padding: 25px 50px;
+    position: fixed;
+    right: 0;
+    top: 0px;
+    width: #{$WIDTH_MARKDOWN};
+
+    @media only screen and (max-width: 1200px) {
+      position: relative;
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 1680px) {
+      width: #{$WIDTH_MARKDOWN_LARGE};
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    img {
+      background-color: var(--code);
+      border: 0px;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 5px;
+      width: 100%;
+
+      @media only screen and (max-width: 1200px) {
+        margin: auto;
+        width: 50%;
+      }
+
+      @media only screen and (max-width: 1024px) {
+        width: 75%;
+      }
+
+      @media only screen and (max-width: 800px) {
+        width: 100%;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      border-bottom: 1px dashed var(--border);
+      color: var(--title);
+      padding: 5px 0;
+    }
+
+    b,
+    strong,
+    code {
+      color: var(--title);
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 0px 30px;
+      position: relative;
+    }
+
+    blockquote::before {
+      background-color: var(--border);
+      border-radius: 5px;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 5px;
+    }
+
+    p,
+    span,
+    li {
+      color: var(--text);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    a {
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+}

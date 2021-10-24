@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { IMenu } from '../../../../interface/component';
-import styles from './style/style.module.css';
+import styles from './style/style.module.scss';
 
 /**
  * Homepage Card Component
