@@ -2,41 +2,36 @@ import { objToString, verifiedIsNotEmpty } from '@99/helper';
 import { FC } from 'react';
 
 import MarkdownReader from '../../organisms/markdown-reader';
+import { useSectionContext } from '../section/hooks/section.hook';
 import style from './style/style.module.scss';
 
 /**
- * Section Item Templates
+ * Section Item Component
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.14
  */
-const SectionItemTemplates = (
-  Component: FC,
-  markdown: string | undefined = undefined
-) => {
-  /**
-   * Inner Component
-   * @author Irfan Andriansyah <irfan@99.co>
-   * @since 2021.10.14
-   */
-  const InnerComponentTemplates: FC = (props) => (
+const SectionItem: FC = ({ children }) => {
+  const {
+    state: { markdownURL }
+  } = useSectionContext();
+
+  return (
     <div
       className={objToString({
         [style[`t-section-item`]]: true,
-        [style[`t-section-item--with-markdown`]]: verifiedIsNotEmpty(markdown)
+        [style[`t-section-item--with-markdown`]]: verifiedIsNotEmpty(
+          markdownURL
+        )
       })}
     >
-      <div className={style[`t-section-item__content`]}>
-        <Component {...props} />
-      </div>
-      {verifiedIsNotEmpty(markdown) && (
+      <div className={style[`t-section-item__content`]}>{children}</div>
+      {verifiedIsNotEmpty(markdownURL) && (
         <div className={style[`t-section-item__markdown`]}>
-          <MarkdownReader markdownUrl={markdown as string} />
+          <MarkdownReader markdownUrl={markdownURL as string} />
         </div>
       )}
     </div>
   );
-
-  return InnerComponentTemplates;
 };
 
-export default SectionItemTemplates;
+export default SectionItem;

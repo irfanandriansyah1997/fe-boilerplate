@@ -1,6 +1,6 @@
-import { FC, lazy, Suspense, useState } from 'react';
+import { FC, lazy, Suspense, useEffect, useState } from 'react';
 
-import SectionItemTemplates from '../../components/templates/section-item';
+import { useSectionContext } from '../../components/templates/section/hooks/section.hook';
 import NavbarToggle from './components/navbar-toggle';
 import docs from './docs/part-1.docs.md';
 import style from './style/part-1.module.css';
@@ -14,6 +14,13 @@ const CustomComponent = lazy(() => import(`./components/custom-component`));
  */
 const CodeSplittingPart1: FC = () => {
   const [showCustomComponent, toggleShowCustomComponent] = useState(false);
+  const {
+    action: { setMarkdownURL }
+  } = useSectionContext();
+
+  useEffect(() => {
+    setMarkdownURL(docs);
+  }, [setMarkdownURL]);
 
   return (
     <div className={style[`part-1`]}>
@@ -28,4 +35,4 @@ const CodeSplittingPart1: FC = () => {
   );
 };
 
-export default SectionItemTemplates(CodeSplittingPart1, docs);
+export default CodeSplittingPart1;

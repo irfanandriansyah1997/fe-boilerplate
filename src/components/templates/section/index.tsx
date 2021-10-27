@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 import { IMenu } from '../../../interface/component';
 import Sidebar from '../../organisms/sidebar';
+import SectionItem from '../section-item';
+import { SectionProvider } from './context';
 
 /**
  * Section Templates
@@ -19,10 +21,12 @@ const SectionTemplates = (Component: FC, sidebar: IMenu) => {
     const history = useHistory();
 
     return (
-      <div>
+      <SectionProvider>
         <Sidebar {...sidebar} onClickBack={(): void => history.push(`/`)} />
-        <Component {...props} />
-      </div>
+        <SectionItem>
+          <Component {...props} />
+        </SectionItem>
+      </SectionProvider>
     );
   };
 

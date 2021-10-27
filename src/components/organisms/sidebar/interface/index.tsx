@@ -1,4 +1,4 @@
-import { IMenu } from '../../../../interface/component';
+import { IMenu, IMenuItem } from '../../../../interface/component';
 
 /**
  * Sidebar Mobile Menu Props Interface
@@ -17,4 +17,5 @@ export interface ISidebarMobilMenuProps extends ISidebarProps {
  */
 export interface ISidebarProps extends IMenu {
   onClickBack(): void;
+  onClickItem?: (param: IMenuItem) => void;
 }

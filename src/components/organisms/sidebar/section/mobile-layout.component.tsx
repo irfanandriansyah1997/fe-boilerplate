@@ -15,6 +15,7 @@ import styles from '../style/mobile-layout.module.scss';
 const SidebarMobileMenu: FC<ISidebarMobilMenuProps> = ({
   menu,
   onClickBack,
+  onClickItem,
   show,
   subtitle,
   title,
@@ -48,7 +49,7 @@ const SidebarMobileMenu: FC<ISidebarMobilMenuProps> = ({
             <p>{subtitle}</p>
           </div>
           <div className={styles[`o-sidebar__menu`]}>
-            {menu.map(({ text, to }) => (
+            {menu.map(({ isPrimary, text, to }) => (
               <NavLink
                 to={to}
                 key={`${to}-${text}`}
@@ -56,6 +57,8 @@ const SidebarMobileMenu: FC<ISidebarMobilMenuProps> = ({
                 activeClassName={styles[`o-sidebar__item--active`]}
                 onClick={(): void => {
                   toggleShow(false);
+
+                  if (onClickItem) onClickItem({ isPrimary, text, to });
                 }}
               >
                 <span className="material-icons">done</span>

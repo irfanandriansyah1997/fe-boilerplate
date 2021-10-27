@@ -12,6 +12,7 @@ import styles from '../style/desktop-layout.module.scss';
 const SidebarDesktopLayout: FC<ISidebarProps> = ({
   menu,
   onClickBack,
+  onClickItem,
   subtitle,
   title
 }) => (
@@ -31,12 +32,15 @@ const SidebarDesktopLayout: FC<ISidebarProps> = ({
     </h6>
     <p>{subtitle}</p>
     <div className={styles[`o-sidebar__menu`]}>
-      {menu.map(({ text, to }) => (
+      {menu.map(({ isPrimary, text, to }) => (
         <NavLink
           to={to}
           key={`${to}-${text}`}
           className={styles[`o-sidebar__item`]}
           activeClassName={styles[`o-sidebar__item--active`]}
+          onClick={(): void => {
+            if (onClickItem) onClickItem({ isPrimary, text, to });
+          }}
         >
           <span className="material-icons">done</span>
           {text}
