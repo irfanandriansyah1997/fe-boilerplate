@@ -1,11 +1,17 @@
-import { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState
+} from 'react';
 
 import {
   DEFAULT_MOBILE_SITE_MAXIMUM,
   DEFAULT_SMALL_DESKTOP_SITE_MAXIMUM,
   DEFAULT_TABLET_SITE_MAXIMUM
 } from '../constant';
-import { checkSizeBrowser } from '../helper';
+import { checkSizeBrowser, debounce } from '../helper';
 import { ILayoutType } from './interface';
 
 /**
@@ -48,3 +54,22 @@ export const useLayout = (): ILayoutType | undefined => {
 
   return type;
 };
+
+/**
+ * Use Debounce Hooks
+ * @param {(...args: any[]) => R} func - anonymous function will be called after timeout resolve
+ * @param {number} delay - delay function
+ * @returns {(...args: any[]) => Promise<R>}
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.10.29
+ */
+export function useDebounce<R = void>(
+  func: (...args: any[]) => R,
+  delay: number
+): (...args: any[]) => Promise<R> {
+  const [debouncedFun, teardown] = debounce<R>(func, delay);
+
+  useEffect(() => () => teardown(), [teardown]);
+
+  return debouncedFun;
+}
