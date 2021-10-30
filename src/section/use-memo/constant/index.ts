@@ -9,6 +9,10 @@ export const SIDEBAR_MENU_USE_MEMO_SECTION: IMenu = {
     {
       text: `Implement Web Worker`,
       to: `/use-memo/part-2`
+    },
+    {
+      text: `Window Large List Render`,
+      to: `/use-memo/part-3`
     }
   ],
   subtitle: `Reduce High Calculation With Use Memo`,

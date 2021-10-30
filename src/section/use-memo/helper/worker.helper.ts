@@ -5,4 +5,6 @@ import worker from 'workerize?name=[name].[contenthash:8]!./city.helper';
 
 import * as modules from './city.helper';
 
-export const { getCityItems } = worker<typeof modules>();
+export const { getCityItems, getCityItemsWithSelectedItem } = worker<
+  typeof modules
+>();

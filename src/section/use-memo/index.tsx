@@ -6,6 +6,7 @@ import { SIDEBAR_MENU_USE_MEMO_SECTION } from './constant';
 
 const UseMemoPart1 = lazy(() => import(`./part-1`));
 const UseMemoPart2 = lazy(() => import(`./part-2`));
+const UseMemoPart3 = lazy(() => import(`./part-3`));
 
 /**
  * Implement Use Memo Section
@@ -24,6 +25,9 @@ const UseMemo: FC = () => {
           </Route>
           <Route path={`${match.url}/part-2`}>
             <UseMemoPart2 />
+          </Route>
+          <Route path={`${match.url}/part-3`}>
+            <UseMemoPart3 />
           </Route>
         </Switch>
       </Suspense>
