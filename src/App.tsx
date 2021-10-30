@@ -1,8 +1,11 @@
+import { lazy, memo, Suspense } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './style/apps.css';
-import CodeSplittingRouter from './section/code-splitting';
 import Homepage from './section/homepage';
+
+const CodeSplittingRouter = lazy(() => import(`./section/code-splitting`));
+const UseMemoRouter = lazy(() => import(`./section/use-memo`));
 
 /**
  * Main Apps Routing
@@ -15,7 +18,14 @@ function App() {
       <Router>
         <Switch>
           <Route path="/code-splitting">
-            <CodeSplittingRouter />
+            <Suspense fallback={null}>
+              <CodeSplittingRouter />
+            </Suspense>
+          </Route>
+          <Route path="/use-memo">
+            <Suspense fallback={null}>
+              <UseMemoRouter />
+            </Suspense>
           </Route>
           <Route exact path="/">
             <Homepage />
@@ -26,4 +36,4 @@ function App() {
   );
 }
 
-export default App;
+export default memo(App);
