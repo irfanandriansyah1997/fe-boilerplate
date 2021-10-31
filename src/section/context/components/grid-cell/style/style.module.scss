@@ -1,0 +1,12 @@
+.grid-cell {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: var(--text);
+  display: flex;
+  font-size: 18px;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}

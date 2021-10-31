@@ -1,0 +1,49 @@
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.dog-form {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 0px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 10px;
+  max-width: 500px;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+
+  label {
+    color: var(--title);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  input {
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: var(--text);
+    font-size: 16px;
+    outline: none;
+    padding: 10px 15px;
+    width: 100%;
+
+    &:focus {
+      border: 1px solid rgba(85, 102, 119, 0.38);
+    }
+  }
+
+  &__text {
+    max-width: 500px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+  }
+}

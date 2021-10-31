@@ -6,6 +6,7 @@ import Homepage from './section/homepage';
 
 const CodeSplittingRouter = lazy(() => import(`./section/code-splitting`));
 const UseMemoRouter = lazy(() => import(`./section/use-memo`));
+const OptimizeContext = lazy(() => import(`./section/context`));
 
 /**
  * Main Apps Routing
@@ -25,6 +26,11 @@ function App() {
           <Route path="/use-memo">
             <Suspense fallback={null}>
               <UseMemoRouter />
+            </Suspense>
+          </Route>
+          <Route path="/context">
+            <Suspense fallback={null}>
+              <OptimizeContext />
             </Suspense>
           </Route>
           <Route exact path="/">
