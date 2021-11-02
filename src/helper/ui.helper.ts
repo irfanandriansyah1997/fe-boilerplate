@@ -7,7 +7,7 @@ import { NullAble } from '../interface/general';
  * @since 2021.10.24
  */
 export const checkSizeBrowser = (): [number, number] => {
-  if (typeof window !== undefined)
+  if (typeof window !== `undefined`)
     return [window.innerWidth, window.innerHeight];
 
   return [0, 0];
@@ -47,9 +47,9 @@ export function debounce<R = void>(
     return new Promise((resolve) => {
       removeTimer();
 
-      timer = setTimeout(() => {
+      timer = (setTimeout(() => {
         resolve(func(...args));
-      }, delay);
+      }, delay) as unknown) as NodeJS.Timeout;
     });
   }
 
