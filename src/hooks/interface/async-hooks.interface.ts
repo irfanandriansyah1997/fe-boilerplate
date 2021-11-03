@@ -30,7 +30,8 @@ export interface IAsyncHooksState<T> {
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.30
  */
-export interface IAsyncStatusIndicator {
+export interface IAsyncStatusIndicator<T> {
+  data: T;
   isError: boolean;
   isIdle: boolean;
   isLoading: boolean;
@@ -42,8 +43,7 @@ export interface IAsyncStatusIndicator {
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.30
  */
-export interface IAsyncHooks<T> extends IAsyncStatusIndicator {
-  data: T;
+export interface IAsyncHooks<T> extends IAsyncStatusIndicator<T> {
   error?: Error;
   reset(): void;
   run(fn: Promise<T>): Promise<T | Error>;

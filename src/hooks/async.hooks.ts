@@ -93,7 +93,7 @@ export function useAsync<T = any>(
 
           return data;
         })
-        .catch((error) => {
+        .catch((error: Error) => {
           safeDispatch({
             error,
             status: IAsyncStatusEnum.rejected

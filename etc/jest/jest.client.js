@@ -1,7 +1,7 @@
 module.exports = {
   ...require('./jest.common'),
   displayName: 'dom',
-  setupFiles: [],
+  setupFiles: ['jest-localstorage-mock'],
   testEnvironment: 'jest-environment-jsdom',
   testMatch: [
     '**/__tests__/**/*.[jt]s?(x)',
