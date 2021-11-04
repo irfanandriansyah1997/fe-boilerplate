@@ -27,8 +27,7 @@ export const useLayout = (): ILayoutType | undefined => {
     const [width] = checkSizeBrowser();
 
     if (ref.current) {
-      if (width === 0 && type !== undefined) setType(undefined);
-      else if (width <= DEFAULT_MOBILE_SITE_MAXIMUM) {
+      if (width <= DEFAULT_MOBILE_SITE_MAXIMUM) {
         if (type !== `mobile`) setType(`mobile`);
       } else if (width <= DEFAULT_TABLET_SITE_MAXIMUM) {
         if (type !== `tablet`) setType(`tablet`);
