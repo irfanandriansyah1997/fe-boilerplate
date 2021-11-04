@@ -7,5 +7,9 @@ module.exports = {
     '**/__tests__/**/*.[jt]s?(x)',
     '**/?(*.)+(spec|test).[jt]s?(x)',
     '!**/?(*.)+(server.spec|server.test).[jt]s?(x)'
+  ],
+  transformIgnorePatterns: [
+    '<rootDir>/bower_components/',
+    '<rootDir>/node_modules/'
   ]
 };

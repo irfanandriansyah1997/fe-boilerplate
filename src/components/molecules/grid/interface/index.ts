@@ -7,6 +7,8 @@ import { FC } from 'react';
  */
 export interface IGridProps {
   Cell: FC<ICellProps>;
+  column?: number;
+  row?: number;
 }
 
 /**

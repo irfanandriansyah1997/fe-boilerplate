@@ -59,15 +59,17 @@ const Image: FC<React.ImgHTMLAttributes<HTMLImageElement>> = ({
  * @since 2021.10.15
  */
 const MarkdownCode: FC<IMarkdownContentProps> = ({ content }) => (
-  <ReactMarkdown
-    remarkPlugins={[remarkGfm]}
-    components={{
-      code: CodeSection,
-      img: Image as any
-    }}
-  >
-    {content}
-  </ReactMarkdown>
+  <div data-testid="markdown-code">
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={{
+        code: CodeSection,
+        img: Image as any
+      }}
+    >
+      {content}
+    </ReactMarkdown>
+  </div>
 );
 
 export default MarkdownCode;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Markdown Reader Snapshot Testing 1`] = `
+<div
+  data-testid="markdown-code"
+>
+  <div>
+    ### Hello World 
+ Sample Text On Markdown
+  </div>
+</div>
+`;

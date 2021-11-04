@@ -12,9 +12,10 @@ import { IAppGridProps } from './interface';
 const AppGrid: FC<IAppGridProps> = ({
   Cell,
   onForceRerender,
-  onUpdateGrid
+  onUpdateGrid,
+  ...res
 }) => (
-  <div className={styles[`app-grid`]}>
+  <div className={styles[`app-grid`]} data-testid="app-grid">
     <div className={styles[`app-grid__button-container`]}>
       <button type="button" onClick={onUpdateGrid}>
         <span className="material-icons">update</span>
@@ -25,8 +26,7 @@ const AppGrid: FC<IAppGridProps> = ({
         Force Re-render
       </button>
     </div>
-
-    <Grid Cell={Cell} />
+    <Grid {...res} Cell={Cell} />
   </div>
 );
 

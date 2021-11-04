@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { useSafeDispatch } from '../../../../hooks/async.hooks';
 import { appsCache } from '../../../../hooks/cache.hooks';
 import { IMarkdownHooks } from '../interface';
 
@@ -49,6 +50,14 @@ export const getMarkdownContent = async (
 export const useMarkdownReader = (url: string): Partial<IMarkdownHooks> => {
   const [content, setMarkdown] = useState<Partial<IMarkdownHooks>>({});
   const ref = useRef(true);
+  const dispatch = useSafeDispatch(setMarkdown);
+
+  useEffect(
+    () => (): void => {
+      ref.current = false;
+    },
+    []
+  );
 
   /**
    * On Load Markdown
@@ -59,15 +68,11 @@ export const useMarkdownReader = (url: string): Partial<IMarkdownHooks> => {
    */
   const setMarkdownContent = useCallback(
     (value: Partial<IMarkdownHooks>) => {
-      if (
-        ref &&
-        content.content !== value.content &&
-        content.url !== value.url
-      ) {
-        setMarkdown(value);
+      if (content.content !== value.content && content.url !== value.url) {
+        dispatch(value);
       }
     },
-    [ref, content]
+    [content.content, content.url, dispatch]
   );
 
   /**
@@ -83,14 +88,6 @@ export const useMarkdownReader = (url: string): Partial<IMarkdownHooks> => {
       });
     }
   }, [setMarkdownContent, ref, url]);
-
-  useEffect(
-    () => (): void => {
-      ref.current = false;
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
 
   useEffect(() => {
     const { url: urlState } = content;

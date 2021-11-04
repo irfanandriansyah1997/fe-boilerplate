@@ -14,6 +14,7 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/etc/jest/setup-jest.js'],
   transform: {
     '.+\\.(css|styl|less|sass|scss)$': 'jest-css-modules-transform',
+    '^.+\\.(js|jsx)$': 'babel-jest',
     '^.+\\.(ts|tsx)$': 'ts-jest'
   },
   verbose: true,
