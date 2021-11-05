@@ -18,13 +18,14 @@ const MasonryLayout: FC<IMasonryLayout> = ({
 
   return (
     <div
+      data-testid="masonry-container"
       className={styles[`o-masonry`]}
       style={{
         gridTemplateColumns: `repeat(${gridCount}, 1fr)`
       }}
     >
       {masonryItem.map(({ item: masonryChild, key }) => (
-        <div key={key}>
+        <div key={key} data-testid="masonry-column">
           {masonryChild.map(({ item: masonryItemProps, key: keyItem }) => (
             <Component key={keyItem} {...masonryItemProps} />
           ))}

@@ -20,13 +20,9 @@ const Sidebar: FC<ISidebarProps> = ({ ...props }) => {
     case `mobile`:
     case `small-desktop`:
     case `tablet`:
-      return <SidebarMobileLayout {...props} />;
-
     default:
-      return null;
+      return <SidebarMobileLayout {...props} />;
   }
-
-  return null;
 };
 
 export default Sidebar;

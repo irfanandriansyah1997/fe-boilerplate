@@ -16,11 +16,12 @@ const SidebarDesktopLayout: FC<ISidebarProps> = ({
   subtitle,
   title
 }) => (
-  <div className={styles[`o-sidebar`]}>
+  <div className={styles[`o-sidebar`]} data-testid="sidebar-dsite">
     <h6>
       <button
         type="button"
         className="material-icons"
+        data-testid="sidebar-dsite-click-back"
         onClick={(e): void => {
           e.preventDefault();
           onClickBack();
@@ -36,6 +37,7 @@ const SidebarDesktopLayout: FC<ISidebarProps> = ({
         <NavLink
           to={to}
           key={`${to}-${text}`}
+          data-testid="sidebar-dsite-item"
           className={styles[`o-sidebar__item`]}
           activeClassName={styles[`o-sidebar__item--active`]}
           onClick={(): void => {

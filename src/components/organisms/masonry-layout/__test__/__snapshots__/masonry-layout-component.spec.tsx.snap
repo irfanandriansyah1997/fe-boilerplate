@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Masonry Layout Componet Snapshot Testing 1`] = `
+<div
+  class="o-masonry"
+  data-testid="masonry-container"
+  style="grid-template-columns: repeat(4, 1fr);"
+>
+  <div
+    data-testid="masonry-column"
+  >
+    <div
+      data-testid="masonry-item"
+    >
+      Hello World
+    </div>
+    <div
+      data-testid="masonry-item"
+    >
+      Hello World
+    </div>
+  </div>
+  <div
+    data-testid="masonry-column"
+  >
+    <div
+      data-testid="masonry-item"
+    >
+      Hello World
+    </div>
+    <div
+      data-testid="masonry-item"
+    >
+      Hello World
+    </div>
+  </div>
+  <div
+    data-testid="masonry-column"
+  >
+    <div
+      data-testid="masonry-item"
+    >
+      Hello World
+    </div>
+    <div
+      data-testid="masonry-item"
+    >
+      Hello World
+    </div>
+  </div>
+  <div
+    data-testid="masonry-column"
+  >
+    <div
+      data-testid="masonry-item"
+    >
+      Hello World
+    </div>
+    <div
+      data-testid="masonry-item"
+    >
+      Hello World
+    </div>
+  </div>
+</div>
+`;

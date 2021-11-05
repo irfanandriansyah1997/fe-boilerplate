@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Sidebar On Desktop Site Snapshot Testing 1`] = `
+<div
+  class="o-sidebar"
+  data-testid="sidebar-dsite"
+>
+  <h6>
+    <button
+      class="material-icons"
+      data-testid="sidebar-dsite-click-back"
+      type="button"
+    >
+      arrow_back
+    </button>
+    Title Course
+  </h6>
+  <p>
+    Sample Subtitle Course
+  </p>
+  <div
+    class="o-sidebar__menu"
+  >
+    <a
+      aria-current="page"
+      class="o-sidebar__item o-sidebar__item--active"
+      data-testid="sidebar-dsite-item"
+      href="/context/part-1"
+    >
+      <span
+        class="material-icons"
+      >
+        done
+      </span>
+      Wrap Use Memo
+    </a>
+    <a
+      class="o-sidebar__item"
+      data-testid="sidebar-dsite-item"
+      href="/context/part-2"
+    >
+      <span
+        class="material-icons"
+      >
+        done
+      </span>
+      Separate Context Value
+    </a>
+    <a
+      class="o-sidebar__item"
+      data-testid="sidebar-dsite-item"
+      href="/context/part-3"
+    >
+      <span
+        class="material-icons"
+      >
+        done
+      </span>
+      Colocate State
+    </a>
+  </div>
+</div>
+`;

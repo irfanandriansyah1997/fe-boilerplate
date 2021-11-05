@@ -55,3 +55,17 @@ export function debounce<R = void>(
 
   return [simulate, removeTimer];
 }
+
+/**
+ * Simulate Browser Resize
+ * @param {number} pixel - pixel browser width
+ * @returns {void}
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.11.04
+ */
+export const simulateResize = (
+  pixel: number
+): (() => Promise<void>) => async (): Promise<void> => {
+  global.innerWidth = pixel;
+  global.dispatchEvent(new Event(`resize`));
+};

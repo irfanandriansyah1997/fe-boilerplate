@@ -12,20 +12,6 @@ import { useDebounce, useLayout } from '../layout.hooks';
 const MOCK_FUNCTION = () =>
   new Promise<string>((resolve) => resolve(`It's Payload`));
 
-/**
- * Simulate Browser Resize
- * @param {number} pixel - pixel browser width
- * @returns {void}
- * @author Irfan Andriansyah <irfan@99.co>
- * @since 2021.11.04
- */
-const simulateResize = (
-  pixel: number
-): (() => Promise<void>) => async (): Promise<void> => {
-  global.innerWidth = pixel;
-  global.dispatchEvent(new Event(`resize`));
-};
-
 describe(`Testing Layout Hooks`, () => {
   describe(`Testing Hooks Use Layout`, () => {
     let addEventSpy: jest.SpyInstance;
@@ -44,16 +30,16 @@ describe(`Testing Layout Hooks`, () => {
         expect.any(Function)
       );
 
-      await act(simulateResize(1366));
+      await act(helper.simulateResize(1366));
       expect(result.current).toBe(`desktop`);
 
-      await act(simulateResize(1199));
+      await act(helper.simulateResize(1199));
       expect(result.current).toBe(`small-desktop`);
 
-      await act(simulateResize(1024));
+      await act(helper.simulateResize(1024));
       expect(result.current).toBe(`tablet`);
 
-      await act(simulateResize(360));
+      await act(helper.simulateResize(360));
       expect(result.current).toBe(`mobile`);
 
       /**
