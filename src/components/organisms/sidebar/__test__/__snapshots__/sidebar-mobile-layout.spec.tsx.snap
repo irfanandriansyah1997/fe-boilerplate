@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Sidebar On Mobile Site Snapshot Testing Testing when at the start of rendering 1`] = `
+<div
+  data-testid="sidebar-msite"
+>
+  <div
+    class="o-sidebar-mobile__navbar"
+    data-testid="sidebar-msite-navbar"
+  >
+    <button
+      class="material-icons"
+      data-testid="sidebar-msite-navbar-button"
+      type="button"
+    >
+      menu
+    </button>
+    <h6
+      data-testid="sidebar-msite-navbar-title"
+    >
+      Title Course
+    </h6>
+  </div>
+</div>
+`;
+
+exports[`Testing Sidebar On Mobile Site Snapshot Testing Testing when user click toggle button 1`] = `
+<div
+  data-testid="sidebar-msite"
+>
+  <div
+    class="o-sidebar-mobile__navbar"
+    data-testid="sidebar-msite-navbar"
+  >
+    <button
+      class="material-icons"
+      data-testid="sidebar-msite-navbar-button"
+      type="button"
+    >
+      menu
+    </button>
+    <h6
+      data-testid="sidebar-msite-navbar-title"
+    >
+      Title Course
+    </h6>
+  </div>
+</div>
+`;
+
+exports[`Testing Sidebar On Mobile Site Snapshot Testing Testing when user click toggle button 2`] = `
+<div
+  class="o-sidebar-mobile__dialog o-sidebar-mobile__dialog--entered"
+  data-testid="sidebar-msite-dialog"
+>
+  <div
+    class="o-sidebar-mobile__dialog-heading"
+  >
+    <h6>
+      <button
+        class="material-icons"
+        type="button"
+      >
+        arrow_back
+      </button>
+      Title Course
+    </h6>
+    <p>
+      Sample Subtitle Course
+    </p>
+  </div>
+  <div
+    class="o-sidebar__menu"
+  >
+    <a
+      aria-current="page"
+      class="o-sidebar__item o-sidebar__item--active"
+      data-testid="sidebar-msite-dialog-menu-item"
+      href="/context/part-1"
+    >
+      <span
+        class="material-icons"
+      >
+        done
+      </span>
+      Wrap Use Memo
+    </a>
+    <a
+      class="o-sidebar__item"
+      data-testid="sidebar-msite-dialog-menu-item"
+      href="/context/part-2"
+    >
+      <span
+        class="material-icons"
+      >
+        done
+      </span>
+      Separate Context Value
+    </a>
+    <a
+      class="o-sidebar__item"
+      data-testid="sidebar-msite-dialog-menu-item"
+      href="/context/part-3"
+    >
+      <span
+        class="material-icons"
+      >
+        done
+      </span>
+      Colocate State
+    </a>
+  </div>
+  <button
+    class="o-sidebar-mobile__back-button"
+    data-testid="sidebar-msite-dialog-click-back"
+    type="button"
+  >
+    🏠 Back To Homepage
+  </button>
+</div>
+`;

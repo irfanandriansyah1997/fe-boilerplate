@@ -1,6 +1,6 @@
-import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useState } from 'react';
 
-import { NullAble } from '../../../../interface/general';
+import { useSafeDispatch } from '../../../../hooks/async.hooks';
 import { SectionContext } from '../context';
 import {
   ISectionContext,
@@ -14,27 +14,8 @@ import {
  * @since 2021.10.27
  */
 export const useSection = (): ISectionHooks => {
-  const ref = useRef<NullAble<boolean>>();
   const [markdown, setMarkdown] = useState<string | undefined>(undefined);
-
-  useEffect(() => {
-    ref.current = true;
-
-    return () => {
-      ref.current = false;
-    };
-  }, []);
-
-  /**
-   * Safe Dispatch
-   * @param {NullAble<string>} markdownURL - markdown url
-   * @returns {void}
-   * @author Irfan Andriansyah <irfan@99.co>
-   * @since 2021.10.27
-   */
-  const safeDispatch = (markdownURL: NullAble<string>): void => {
-    if (ref.current) setMarkdown(markdownURL);
-  };
+  const safeDispatch = useSafeDispatch(setMarkdown);
 
   /**
    * On Change Markdown
@@ -46,12 +27,10 @@ export const useSection = (): ISectionHooks => {
   const onChangeMarkdown: ISectionHooksDispatch = useCallback(
     (param): void => {
       if (typeof param === `function`) {
-        const result = param(markdown);
-
-        if (result !== markdown) safeDispatch(result);
+        safeDispatch(param);
       } else if (param !== markdown) safeDispatch(param);
     },
-    [markdown]
+    [markdown, safeDispatch]
   );
 
   return [markdown, onChangeMarkdown];

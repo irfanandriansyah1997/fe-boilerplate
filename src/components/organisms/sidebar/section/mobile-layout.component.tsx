@@ -25,6 +25,7 @@ const SidebarMobileMenu: FC<ISidebarMobilMenuProps> = ({
     <Transition in={show} timeout={300} mountOnEnter unmountOnExit>
       {(state) => (
         <div
+          data-testid="sidebar-msite-dialog"
           className={objToString({
             [styles[`o-sidebar-mobile__dialog`]]: true,
             [styles[`o-sidebar-mobile__dialog--${state}`]]: verifiedIsNotEmpty(
@@ -52,6 +53,7 @@ const SidebarMobileMenu: FC<ISidebarMobilMenuProps> = ({
             {menu.map(({ isPrimary, text, to }) => (
               <NavLink
                 to={to}
+                data-testid="sidebar-msite-dialog-menu-item"
                 key={`${to}-${text}`}
                 className={styles[`o-sidebar__item`]}
                 activeClassName={styles[`o-sidebar__item--active`]}
@@ -68,6 +70,7 @@ const SidebarMobileMenu: FC<ISidebarMobilMenuProps> = ({
           </div>
           <button
             type="button"
+            data-testid="sidebar-msite-dialog-click-back"
             className={styles[`o-sidebar-mobile__back-button`]}
             onClick={(e): void => {
               e.preventDefault();
@@ -114,15 +117,17 @@ const SidebarMobileLayout: FC<ISidebarProps> = ({ title, ...props }) => {
 
   return (
     <>
-      <div className={styles[`o-sidebar-mobile`]}>
+      <div className={styles[`o-sidebar-mobile`]} data-testid="sidebar-msite">
         <div
           className={objToString({
             [styles[`o-sidebar-mobile__navbar`]]: true,
             [styles[`o-sidebar-mobile__navbar--scrolled`]]: isScrolled
           })}
+          data-testid="sidebar-msite-navbar"
         >
           <button
             type="button"
+            data-testid="sidebar-msite-navbar-button"
             className="material-icons"
             onClick={(e): void => {
               e.preventDefault();
@@ -131,7 +136,7 @@ const SidebarMobileLayout: FC<ISidebarProps> = ({ title, ...props }) => {
           >
             menu
           </button>
-          <h6>{title}</h6>
+          <h6 data-testid="sidebar-msite-navbar-title">{title}</h6>
         </div>
       </div>
       <SidebarMobileMenu

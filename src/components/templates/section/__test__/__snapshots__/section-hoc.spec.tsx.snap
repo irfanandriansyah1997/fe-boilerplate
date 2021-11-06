@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Section HOC Render On Browser Snapshot Testing 1`] = `
+<div>
+  <div>
+    <div
+      data-testid="sidebar-msite"
+    >
+      <div
+        class="o-sidebar-mobile__navbar"
+        data-testid="sidebar-msite-navbar"
+      >
+        <button
+          class="material-icons"
+          data-testid="sidebar-msite-navbar-button"
+          type="button"
+        >
+          menu
+        </button>
+        <h6
+          data-testid="sidebar-msite-navbar-title"
+        >
+          Sample Title
+        </h6>
+      </div>
+    </div>
+    <div
+      class="t-section-item t-section-item--with-markdown"
+    >
+      <div
+        class="t-section-item__content"
+      >
+        <div>
+          Hello World
+        </div>
+      </div>
+      <div
+        class="t-section-item__markdown"
+      >
+        <div
+          data-testid="markdown-code"
+        >
+          <div>
+            ### Hello World 
+ Sample Text On Markdown
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
