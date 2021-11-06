@@ -16,13 +16,13 @@ const Homepage: FC = () => {
   return (
     <div className={style.homepage}>
       <div className={style.homepage__heading}>
-        <h1>React.js cheatsheet</h1>
-        <p>
+        <h1 data-testid="homepage-title">React.js cheatsheet</h1>
+        <p data-testid="homepage-description">
           React is a JavaScript library for building user interfaces. This guide
           targets React v15 to v16.
         </p>
       </div>
-      <div className={style.homepage__section}>
+      <div className={style.homepage__section} data-testid="homepage-section">
         <h2>Performance</h2>
         <MasonryLayout item={response} component={HomepageCard} maxGrid={4} />
       </div>

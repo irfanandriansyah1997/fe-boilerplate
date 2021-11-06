@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: End To End Testing
 
 on:
   push:
@@ -7,16 +7,13 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  ui-chrome-tests:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
+    container: cypress/browsers:node14.17.0-chrome88-ff89
     steps:
-      - name: Check out code
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Set up node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -36,8 +33,11 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Run unit test
-        run: yarn test
-
-      - name: Send to codecov
-        uses: codecov/codecov-action@v2
+      - name: 'UI Tests - Chrome'
+        uses: cypress-io/github-action@v2
+        with:
+          start: yarn start
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
+          browser: chrome
+          spec: cypress/integration/**/*.spec.ts

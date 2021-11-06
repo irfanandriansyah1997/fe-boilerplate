@@ -5,8 +5,8 @@ module.exports = {
   testEnvironment: 'jest-environment-jsdom',
   testMatch: [
     '**/__tests__/**/*.[jt]s?(x)',
-    '**/?(*.)+(spec|test).[jt]s?(x)',
-    '!**/?(*.)+(server.spec|server.test).[jt]s?(x)'
+    '**/?(*.)+(spec).[jt]s?(x)',
+    '!**/?(*.)+(server.spec|server).[jt]s?(x)'
   ],
   transformIgnorePatterns: [
     '<rootDir>/bower_components/',

@@ -10,6 +10,7 @@ module.exports = {
   moduleNameMapper: {
     '\\.module\\.css$': 'identity-obj-proxy'
   },
+  modulePathIgnorePatterns: ['<rootDir>/cypress/'],
   rootDir: path.join(__dirname, '../..'),
   setupFilesAfterEnv: ['<rootDir>/etc/jest/setup-jest.js'],
   transform: {
