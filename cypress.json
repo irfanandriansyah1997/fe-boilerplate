@@ -1,0 +1,19 @@
+
+  {
+  "video": false,
+  "screenshot": false,
+  "chromeWebSecurity": false,
+  "defaultCommandTimeout": 10000,
+  "pageLoadTimeout": 20000,
+  "screenshotOnRunFailure": false,
+  "watchForFileChanges": true,
+  "integrationFolder": "cypress/integration",
+  "testFiles":["**/*.js","**/*.ts"],
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results",
+    "overwrite": false,
+    "html": true,
+    "json": true
+  }
+}
