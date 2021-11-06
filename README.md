@@ -3,6 +3,7 @@ create sample website using CRA
 
 [![codecov](https://codecov.io/gh/irfanandriansyah1997/fe-boilerplate/branch/main/graph/badge.svg?token=1dWBCzGUSo)](https://codecov.io/gh/irfanandriansyah1997/fe-boilerplate)
 ![Continuous Integration](https://github.com/irfanandriansyah1997/fe-boilerplate/actions/workflows/ci.yml/badge.svg?branch=main)
+![End To End Testing](https://github.com/irfanandriansyah1997/fe-boilerplate/actions/workflows/e2e.yml/badge.svg?branch=main)
 ![Vercel](https://vercelbadge.vercel.app/api/irfanandriansyah1997/fe-boilerplate)
 
 ## Installation
