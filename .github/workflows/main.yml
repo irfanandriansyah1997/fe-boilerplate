@@ -2,8 +2,7 @@ name: Continuous Integration Fe Boilerplate
 
 on:
   push:
-    branches-ignore:
-      - 'backup/**'
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -15,7 +14,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
       - name: use cache
         uses: actions/cache@v2
@@ -30,3 +31,6 @@ jobs:
 
       - name: Run unit test
         run: yarn test
+
+      - name: Send to codecov
+        uses: codecov/codecov-action@v2
