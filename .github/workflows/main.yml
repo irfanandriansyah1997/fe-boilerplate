@@ -1,0 +1,32 @@
+name: Continuous Integration Fe Boilerplate
+
+on:
+  push:
+    branches-ignore:
+      - 'backup/**'
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up node
+        uses: actions/setup-node@v1
+
+      - name: use cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run unit test
+        run: yarn test
