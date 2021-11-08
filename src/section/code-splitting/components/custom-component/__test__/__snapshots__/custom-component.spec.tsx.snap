@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Custom Component Snapshot Testing 1`] = `
+<div
+  class="custom-component"
+  data-testid="custom-component"
+>
+  This Is Sample Custom Component
+</div>
+`;

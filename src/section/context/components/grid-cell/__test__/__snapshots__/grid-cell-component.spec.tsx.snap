@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Grid Cell Component Snapshot Testing Testing With Cell Props Greather 50 1`] = `
+<button
+  class="grid-cell"
+  data-testid="grid-cell"
+  style="background-color: rgba(0, 0, 0, 0.8); color: white;"
+  type="button"
+>
+  80
+</button>
+`;
+
+exports[`Testing Grid Cell Component Snapshot Testing Testing With Cell Props Lower Then 50 1`] = `
+<button
+  class="grid-cell"
+  data-testid="grid-cell"
+  style="background-color: rgba(0, 0, 0, 0.15); color: black;"
+  type="button"
+>
+  15
+</button>
+`;

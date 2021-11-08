@@ -41,6 +41,7 @@ let AutocompleteItem: FC<IAutocompleteItemProps> = ({
     onKeyPress={undefined}
     onClick={(e): void => {
       e.preventDefault();
+
       if (onClick)
         onClick({
           country,
