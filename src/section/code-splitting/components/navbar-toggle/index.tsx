@@ -29,7 +29,7 @@ const NavbarToggle: FC<INavbarToggleProps> = ({
   };
 
   return (
-    <div className={style[`navbar-toggle`]}>
+    <div className={style[`navbar-toggle`]} data-testid="navbar-toggle">
       <div className={style[`navbar-toggle__text`]}>
         <h6>Toggle Custom Component</h6>
         <p>
@@ -42,6 +42,7 @@ const NavbarToggle: FC<INavbarToggleProps> = ({
         onFocus={onFocus}
         onMouseEnter={onMouseOver}
         onClick={onClickButton(true)}
+        data-testid="navbar-toggle-button-active"
         className={objToString({
           [style[`navbar-toggle__button`]]: true,
           [style[`navbar-toggle__button--active`]]: active
@@ -54,6 +55,7 @@ const NavbarToggle: FC<INavbarToggleProps> = ({
         onFocus={onFocus}
         onMouseEnter={onMouseOver}
         onClick={onClickButton(false)}
+        data-testid="navbar-toggle-button-inactive"
         className={objToString({
           [style[`navbar-toggle__button`]]: true,
           [style[`navbar-toggle__button--active`]]: !active

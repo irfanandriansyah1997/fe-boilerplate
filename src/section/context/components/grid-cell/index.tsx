@@ -10,6 +10,7 @@ import { IGridCellProps } from './interface';
  */
 const GridCell: FC<IGridCellProps> = ({ cell, onClickCell }) => (
   <button
+    data-testid="grid-cell"
     type="button"
     onClick={onClickCell}
     className={style[`grid-cell`]}

@@ -36,11 +36,13 @@ let AutocompleteItem: FC<IAutocompleteItemProps> = ({
       [styles[`autocomplete__content-item`]]: true,
       [styles[`autocomplete__content-item--active`]]: active === true
     })}
+    data-testid="autocomplete-item"
     role="button"
     tabIndex={0}
     onKeyPress={undefined}
     onClick={(e): void => {
       e.preventDefault();
+
       if (onClick)
         onClick({
           country,
@@ -114,7 +116,7 @@ const Autocomplete: FC<IAutocompleteProps> = ({
   );
 
   return (
-    <div>
+    <div data-testid="autocomplete">
       <div
         className={objToString({
           [styles.autocomplete__toggle]: true
@@ -132,12 +134,17 @@ const Autocomplete: FC<IAutocompleteProps> = ({
           <input
             name="keyword"
             type="text"
+            aria-label="autocomplete-input"
             placeholder="Search City Name..."
             ref={ref as LegacyRef<HTMLInputElement>}
             onChange={onChangeHandler}
           />
           {selectedItem && (
-            <button type="button" onClick={resetSelectedItem}>
+            <button
+              type="button"
+              onClick={resetSelectedItem}
+              data-testid="autocomplete-reset"
+            >
               <span className="material-icons">clear</span>
             </button>
           )}

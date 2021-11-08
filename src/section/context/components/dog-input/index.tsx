@@ -11,7 +11,11 @@ import { IDogInputProps } from './interface';
  * @since 2021.10.31
  */
 const DogNameInput: FC<IDogInputProps> = ({ dogName, onChangeDogName }) => (
-  <form onSubmit={(e) => e.preventDefault()} className={style.form}>
+  <form
+    onSubmit={(e) => e.preventDefault()}
+    className={style.form}
+    data-testid="dog-form"
+  >
     <div className={style[`dog-form`]}>
       <label htmlFor="dogName">Dog Name</label>
       <input

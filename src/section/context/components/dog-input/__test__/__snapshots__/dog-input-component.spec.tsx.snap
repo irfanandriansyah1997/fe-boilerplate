@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Dog Input Component Snapshot Testing With Set Dogname Props 1`] = `
+<form
+  class="form"
+  data-testid="dog-form"
+>
+  <div
+    class="dog-form"
+  >
+    <label
+      for="dogName"
+    >
+      Dog Name
+    </label>
+    <input
+      autocomplete="off"
+      id="dogName"
+      placeholder="Input Your Dog Name"
+      value="sample dog name"
+    />
+  </div>
+  <div
+    class="dog-form__text"
+  >
+    this is your dog name: 
+    <strong>
+      sample dog name
+    </strong>
+  </div>
+</form>
+`;
+
+exports[`Testing Dog Input Component Snapshot Testing Without Set Dogname Props 1`] = `
+<form
+  class="form"
+  data-testid="dog-form"
+>
+  <div
+    class="dog-form"
+  >
+    <label
+      for="dogName"
+    >
+      Dog Name
+    </label>
+    <input
+      autocomplete="off"
+      id="dogName"
+      placeholder="Input Your Dog Name"
+      value=""
+    />
+  </div>
+</form>
+`;

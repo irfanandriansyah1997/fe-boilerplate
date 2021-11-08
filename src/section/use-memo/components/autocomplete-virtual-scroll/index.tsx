@@ -37,6 +37,7 @@ let AutocompleteItem: FC<IAutocompleteV2ItemProps> = ({
       [styles[`autocomplete__content-item`]]: true,
       [styles[`autocomplete__content-item--active`]]: active === true
     })}
+    data-testid="autocomplete-item"
     role="button"
     tabIndex={0}
     onKeyPress={undefined}
@@ -125,7 +126,7 @@ const Autocomplete: FC<IAutocompleteV2Props> = ({
   );
 
   return (
-    <div>
+    <div data-testid="autocomplete">
       <div
         className={objToString({
           [styles.autocomplete__toggle]: true
@@ -142,19 +143,27 @@ const Autocomplete: FC<IAutocompleteV2Props> = ({
           <input
             name="keyword"
             type="text"
+            aria-label="autocomplete-input"
             placeholder="Search City Name..."
             ref={ref as LegacyRef<HTMLInputElement>}
             onChange={onChangeHandler}
           />
           {items.length > 0 && items[0].isActive === true && (
-            <button type="button" onClick={resetSelectedItem}>
+            <button
+              type="button"
+              onClick={resetSelectedItem}
+              data-testid="autocomplete-reset"
+            >
               <span className="material-icons">clear</span>
             </button>
           )}
         </div>
       </div>
       <div className={styles.autocomplete__content} ref={listRef}>
-        <div style={{ height: `${totalItems}px`, position: `relative` }}>
+        <div
+          style={{ height: `${totalItems}px`, position: `relative` }}
+          data-testid="autocomplete-container"
+        >
           {virtualItems.map(({ index, size, start }) => {
             const item = items[index];
 

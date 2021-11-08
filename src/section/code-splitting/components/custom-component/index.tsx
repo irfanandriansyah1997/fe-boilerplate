@@ -8,7 +8,7 @@ import styles from './style/style.module.css';
  * @since 2021.10.14
  */
 const CustomComponent: FC = () => (
-  <div className={styles[`custom-component`]}>
+  <div className={styles[`custom-component`]} data-testid="custom-component">
     This Is Sample Custom Component
   </div>
 );

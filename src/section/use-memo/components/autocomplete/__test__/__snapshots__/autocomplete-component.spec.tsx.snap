@@ -1,0 +1,455 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Autocomplete Item Snapshot Testing Testing Initial Render 1`] = `
+<div
+  data-testid="autocomplete"
+>
+  <div
+    class="autocomplete__toggle"
+  >
+    <div>
+      Sample Children Props
+    </div>
+    <div
+      class="autocomplete__toggle-input"
+    >
+      <input
+        aria-label="autocomplete-input"
+        name="keyword"
+        placeholder="Search City Name..."
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    class="autocomplete__content"
+  >
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Bay Minette
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        30.88296
+        , 
+        -87.77305
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Edna
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        28.97859
+        , 
+        -96.64609
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Bayou La Batre
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        30.40352
+        , 
+        -88.24852
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Henderson
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        32.15322
+        , 
+        -94.79938
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Natalia
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        29.18968
+        , 
+        -98.86253
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Bear Creek
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        34.27482
+        , 
+        -87.70058
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Testing Autocomplete Item Snapshot Testing Testing When Keyword Is Not Empty 1`] = `
+<div
+  data-testid="autocomplete"
+>
+  <div
+    class="autocomplete__toggle"
+  >
+    <div>
+      Sample Children Props
+    </div>
+    <div
+      class="autocomplete__toggle-input"
+    >
+      <input
+        aria-label="autocomplete-input"
+        name="keyword"
+        placeholder="Search City Name..."
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    class="autocomplete__content"
+  >
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Bay Minette
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        30.88296
+        , 
+        -87.77305
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Edna
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        28.97859
+        , 
+        -96.64609
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Bayou La Batre
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        30.40352
+        , 
+        -88.24852
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Henderson
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        32.15322
+        , 
+        -94.79938
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Natalia
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        29.18968
+        , 
+        -98.86253
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Bear Creek
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        34.27482
+        , 
+        -87.70058
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Testing Autocomplete Item Snapshot Testing Testing When Selected Item Is Defined 1`] = `
+<div
+  data-testid="autocomplete"
+>
+  <div
+    class="autocomplete__toggle"
+  >
+    <div>
+      Sample Children Props
+    </div>
+    <div
+      class="autocomplete__toggle-input autocomplete__toggle-input--with-item"
+    >
+      <input
+        aria-label="autocomplete-input"
+        name="keyword"
+        placeholder="Search City Name..."
+        type="text"
+      />
+      <button
+        data-testid="autocomplete-reset"
+        type="button"
+      >
+        <span
+          class="material-icons"
+        >
+          clear
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="autocomplete__content"
+  >
+    <div
+      class="autocomplete__content-item autocomplete__content-item--active"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Bay Minette
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        30.88296
+        , 
+        -87.77305
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Edna
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        28.97859
+        , 
+        -96.64609
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Bayou La Batre
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        30.40352
+        , 
+        -88.24852
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Henderson
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        32.15322
+        , 
+        -94.79938
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Natalia
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        29.18968
+        , 
+        -98.86253
+      </span>
+    </div>
+    <div
+      class="autocomplete__content-item"
+      data-testid="autocomplete-item"
+      role="button"
+      tabindex="0"
+    >
+      Bear Creek
+      <span>
+        <i
+          class="material-icons"
+        >
+          location_city
+        </i>
+        US
+         
+        34.27482
+        , 
+        -87.70058
+      </span>
+    </div>
+  </div>
+</div>
+`;
