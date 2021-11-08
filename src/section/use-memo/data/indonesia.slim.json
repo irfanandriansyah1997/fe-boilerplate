@@ -1,0 +1,32 @@
+[
+  {
+    "country": "US",
+    "name": "Bay Minette",
+    "lat": "30.88296",
+    "lng": "-87.77305"
+  },
+  {
+    "country": "US",
+    "name": "Edna",
+    "lat": "28.97859",
+    "lng": "-96.64609"
+  },
+  {
+    "country": "US",
+    "name": "Bayou La Batre",
+    "lat": "30.40352",
+    "lng": "-88.24852"
+  },
+  {
+    "country": "US",
+    "name": "Henderson",
+    "lat": "32.15322",
+    "lng": "-94.79938"
+  },
+  {
+    "country": "US",
+    "name": "Natalia",
+    "lat": "29.18968",
+    "lng": "-98.86253"
+  }
+]

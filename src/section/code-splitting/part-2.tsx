@@ -30,7 +30,7 @@ const CodeSplittingPart2: FC = () => {
   }, [setMarkdownURL]);
 
   return (
-    <div className={style[`part-2`]}>
+    <div className={style[`part-2`]} data-testid="code-splitting-2">
       <NavbarToggle
         active={showCustomComponent}
         onFocus={loadCustomComponent}

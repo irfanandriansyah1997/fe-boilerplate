@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Part 2 Code Splitting Session Custom component should show and hide 1`] = `
+<div>
+  <div
+    class="part-2"
+    data-testid="code-splitting-2"
+  >
+    <div
+      class="navbar-toggle"
+      data-testid="navbar-toggle"
+    >
+      <div
+        class="navbar-toggle__text"
+      >
+        <h6>
+          Toggle Custom Component
+        </h6>
+        <p>
+          Set active for showing custom component and inactive for remove custom component
+        </p>
+      </div>
+      <button
+        class="navbar-toggle__button navbar-toggle__button--active"
+        data-testid="navbar-toggle-button-active"
+        type="button"
+      >
+        Active
+      </button>
+      <button
+        class="navbar-toggle__button"
+        data-testid="navbar-toggle-button-inactive"
+        type="button"
+      >
+        Inactive
+      </button>
+    </div>
+    <div
+      class="custom-component"
+      data-testid="custom-component"
+    >
+      This Is Sample Custom Component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Testing Part 2 Code Splitting Session Snapshot Testing 1`] = `
+<div>
+  <div
+    class="part-2"
+    data-testid="code-splitting-2"
+  >
+    <div
+      class="navbar-toggle"
+      data-testid="navbar-toggle"
+    >
+      <div
+        class="navbar-toggle__text"
+      >
+        <h6>
+          Toggle Custom Component
+        </h6>
+        <p>
+          Set active for showing custom component and inactive for remove custom component
+        </p>
+      </div>
+      <button
+        class="navbar-toggle__button"
+        data-testid="navbar-toggle-button-active"
+        type="button"
+      >
+        Active
+      </button>
+      <button
+        class="navbar-toggle__button navbar-toggle__button--active"
+        data-testid="navbar-toggle-button-inactive"
+        type="button"
+      >
+        Inactive
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Code Splitting Router Snapshot Testing Testing Routing Part 1, 2 & 3 1`] = `
+<div
+  class="part-1"
+  data-testid="code-splitting-1"
+>
+  <div
+    class="navbar-toggle"
+    data-testid="navbar-toggle"
+  >
+    <div
+      class="navbar-toggle__text"
+    >
+      <h6>
+        Toggle Custom Component
+      </h6>
+      <p>
+        Set active for showing custom component and inactive for remove custom component
+      </p>
+    </div>
+    <button
+      class="navbar-toggle__button"
+      data-testid="navbar-toggle-button-active"
+      type="button"
+    >
+      Active
+    </button>
+    <button
+      class="navbar-toggle__button navbar-toggle__button--active"
+      data-testid="navbar-toggle-button-inactive"
+      type="button"
+    >
+      Inactive
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Testing Code Splitting Router Snapshot Testing Testing Routing Part 1, 2 & 3 2`] = `
+<div
+  class="part-2"
+  data-testid="code-splitting-2"
+>
+  <div
+    class="navbar-toggle"
+    data-testid="navbar-toggle"
+  >
+    <div
+      class="navbar-toggle__text"
+    >
+      <h6>
+        Toggle Custom Component
+      </h6>
+      <p>
+        Set active for showing custom component and inactive for remove custom component
+      </p>
+    </div>
+    <button
+      class="navbar-toggle__button"
+      data-testid="navbar-toggle-button-active"
+      type="button"
+    >
+      Active
+    </button>
+    <button
+      class="navbar-toggle__button navbar-toggle__button--active"
+      data-testid="navbar-toggle-button-inactive"
+      type="button"
+    >
+      Inactive
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Testing Code Splitting Router Snapshot Testing Testing Routing Part 1, 2 & 3 3`] = `
+<div
+  class="part-2"
+  data-testid="code-splitting-3"
+>
+  <div
+    class="navbar-toggle"
+    data-testid="navbar-toggle"
+  >
+    <div
+      class="navbar-toggle__text"
+    >
+      <h6>
+        Toggle Custom Component
+      </h6>
+      <p>
+        Set active for showing custom component and inactive for remove custom component
+      </p>
+    </div>
+    <button
+      class="navbar-toggle__button"
+      data-testid="navbar-toggle-button-active"
+      type="button"
+    >
+      Active
+    </button>
+    <button
+      class="navbar-toggle__button navbar-toggle__button--active"
+      data-testid="navbar-toggle-button-inactive"
+      type="button"
+    >
+      Inactive
+    </button>
+  </div>
+</div>
+`;
