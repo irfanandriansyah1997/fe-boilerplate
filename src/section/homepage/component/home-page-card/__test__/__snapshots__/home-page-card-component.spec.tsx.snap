@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Homepage Card Snapshot Testing 1`] = `
+<div
+  class="homepage-card"
+  data-testid="homepage-card"
+>
+  <h6>
+    Title Course
+  </h6>
+  <div
+    class="homepage-card__container"
+  >
+    <p>
+      Sample Subtitle Course
+    </p>
+    <ul>
+      <li>
+        <a
+          data-testid="homepage-card-link"
+          href="/context/part-1"
+        >
+          <span
+            class="material-icons"
+          >
+            sticky_note_2
+          </span>
+          Wrap Use Memo
+        </a>
+      </li>
+      <li>
+        <a
+          data-testid="homepage-card-link"
+          href="/context/part-2"
+        >
+          <span
+            class="material-icons"
+          >
+            sticky_note_2
+          </span>
+          Separate Context Value
+        </a>
+      </li>
+      <li>
+        <a
+          data-testid="homepage-card-link"
+          href="/context/part-3"
+        >
+          <span
+            class="material-icons"
+          >
+            sticky_note_2
+          </span>
+          Colocate State
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
