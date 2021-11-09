@@ -10,7 +10,11 @@ import {
 } from 'react';
 
 import AppGrid from '../../components/organisms/app-grid';
-import { DEFAULT_GRID_VALUE } from '../../constant';
+import {
+  DEFAULT_COLUMN,
+  DEFAULT_GRID_VALUE,
+  DEFAULT_ROW
+} from '../../constant';
 import { updateGridCellState, updateGridState } from '../../helper/grid.helper';
 import { useForceRerender } from '../../hooks/render.hooks';
 import { IGrid } from '../../interface/component';
@@ -38,7 +42,7 @@ const AppDispatchContext = createContext<NullAble<React.Dispatch<Action>>>(
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.30
  */
-export const AppReducersPart1: GenReducer<Reducer, Action> = (
+export const AppReducersPart2: GenReducer<Reducer, Action> = (
   state,
   { payload, type }
 ): Reducer => {
@@ -72,7 +76,7 @@ export const AppReducersPart1: GenReducer<Reducer, Action> = (
  * @since 2021.10.31
  */
 export const AppProvider: FC = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducersPart1, {
+  const [state, dispatch] = useReducer(AppReducersPart2, {
     dogName: ``,
     grid: DEFAULT_GRID_VALUE
   });
@@ -170,6 +174,8 @@ let GridPart2: FC = () => {
   return (
     <AppGrid
       Cell={CellPart2}
+      column={DEFAULT_COLUMN}
+      row={DEFAULT_ROW}
       onUpdateGrid={onUpdateGridLayout}
       onForceRerender={forceRendered}
     />
@@ -211,8 +217,8 @@ const DogNameInputPart2: FC = () => {
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.10.31
  */
-const Part2: FC = () => (
-  <div>
+const ContextPart2: FC = () => (
+  <div data-testid="context-2">
     <AppProvider>
       <DogNameInputPart2 />
       <GridPart2 />
@@ -220,4 +226,4 @@ const Part2: FC = () => (
   </div>
 );
 
-export default Part2;
+export default ContextPart2;

@@ -15,7 +15,11 @@ import {
 } from 'recoil';
 
 import AppGrid from '../../components/organisms/app-grid';
-import { DEFAULT_GRID_VALUE } from '../../constant';
+import {
+  DEFAULT_COLUMN,
+  DEFAULT_GRID_VALUE,
+  DEFAULT_ROW
+} from '../../constant';
 import { useForceRerender } from '../../hooks/render.hooks';
 import { IGrid } from '../../interface/component';
 import { NullAble } from '../../interface/general';
@@ -139,6 +143,8 @@ const GridPart6: FC = () => {
   return (
     <AppGrid
       Cell={CellPart6 as FC<IGrid>}
+      row={DEFAULT_ROW}
+      column={DEFAULT_COLUMN}
       onUpdateGrid={onUpdateGridLayout}
       onForceRerender={forceRendered}
     />
@@ -178,7 +184,7 @@ const DogNameInputPart6: FC = () => {
  * @since 2021.10.31
  */
 const Part6: FC = () => (
-  <div>
+  <div data-testid="context-6">
     <RecoilRoot>
       <DogProvider>
         <DogNameInputPart6 />

@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Part 2 Context Section Snapshot Testing 1`] = `
+<div>
+  <div
+    data-testid="context-2"
+  >
+    <form
+      class="form"
+      data-testid="dog-form"
+    >
+      <div
+        class="dog-form"
+      >
+        <label
+          for="dogName"
+        >
+          Dog Name
+        </label>
+        <input
+          autocomplete="off"
+          id="dogName"
+          placeholder="Input Your Dog Name"
+          value=""
+        />
+      </div>
+    </form>
+    <div
+      class="app-grid"
+      data-testid="app-grid"
+    >
+      <div
+        class="app-grid__button-container"
+      >
+        <button
+          type="button"
+        >
+          <span
+            class="material-icons"
+          >
+            update
+          </span>
+          Update Cells
+        </button>
+        <button
+          type="button"
+        >
+          <span
+            class="material-icons"
+          >
+            refresh
+          </span>
+          Force Re-render
+        </button>
+      </div>
+      <div
+        class="grid"
+        data-testid="grid-container"
+      >
+        <div
+          class="grid__row"
+          data-testid="grid-row"
+        >
+          <div
+            class="grid__column"
+            data-testid="grid-item"
+          >
+            <button
+              class="grid-cell"
+              data-testid="grid-cell"
+              style="background-color: rgba(0, 0, 0, 0.58); color: white;"
+              type="button"
+            >
+              58
+            </button>
+          </div>
+          <div
+            class="grid__column"
+            data-testid="grid-item"
+          >
+            <button
+              class="grid-cell"
+              data-testid="grid-cell"
+              style="background-color: rgba(0, 0, 0, 0.58); color: white;"
+              type="button"
+            >
+              58
+            </button>
+          </div>
+          <div
+            class="grid__column"
+            data-testid="grid-item"
+          >
+            <button
+              class="grid-cell"
+              data-testid="grid-cell"
+              style="background-color: rgba(0, 0, 0, 0.58); color: white;"
+              type="button"
+            >
+              58
+            </button>
+          </div>
+        </div>
+        <div
+          class="grid__row"
+          data-testid="grid-row"
+        >
+          <div
+            class="grid__column"
+            data-testid="grid-item"
+          >
+            <button
+              class="grid-cell"
+              data-testid="grid-cell"
+              style="background-color: rgba(0, 0, 0, 0.58); color: white;"
+              type="button"
+            >
+              58
+            </button>
+          </div>
+          <div
+            class="grid__column"
+            data-testid="grid-item"
+          >
+            <button
+              class="grid-cell"
+              data-testid="grid-cell"
+              style="background-color: rgba(0, 0, 0, 0.58); color: white;"
+              type="button"
+            >
+              58
+            </button>
+          </div>
+          <div
+            class="grid__column"
+            data-testid="grid-item"
+          >
+            <button
+              class="grid-cell"
+              data-testid="grid-cell"
+              style="background-color: rgba(0, 0, 0, 0.58); color: white;"
+              type="button"
+            >
+              58
+            </button>
+          </div>
+        </div>
+        <div
+          class="grid__row"
+          data-testid="grid-row"
+        >
+          <div
+            class="grid__column"
+            data-testid="grid-item"
+          >
+            <button
+              class="grid-cell"
+              data-testid="grid-cell"
+              style="background-color: rgba(0, 0, 0, 0.58); color: white;"
+              type="button"
+            >
+              58
+            </button>
+          </div>
+          <div
+            class="grid__column"
+            data-testid="grid-item"
+          >
+            <button
+              class="grid-cell"
+              data-testid="grid-cell"
+              style="background-color: rgba(0, 0, 0, 0.58); color: white;"
+              type="button"
+            >
+              58
+            </button>
+          </div>
+          <div
+            class="grid__column"
+            data-testid="grid-item"
+          >
+            <button
+              class="grid-cell"
+              data-testid="grid-cell"
+              style="background-color: rgba(0, 0, 0, 0.58); color: white;"
+              type="button"
+            >
+              58
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
