@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Homepage Section Snapshot Testing 1`] = `
+<div>
+  <div
+    class="homepage"
+  >
+    <div
+      class="homepage__heading"
+    >
+      <h1
+        data-testid="homepage-title"
+      >
+        React.js cheatsheet
+      </h1>
+      <p
+        data-testid="homepage-description"
+      >
+        React is a JavaScript library for building user interfaces. This guide targets React v15 to v16.
+      </p>
+    </div>
+    <div
+      class="homepage__section"
+      data-testid="homepage-section"
+    >
+      <h2>
+        Performance
+      </h2>
+      <div
+        class="o-masonry"
+        data-testid="masonry-container"
+        style="grid-template-columns: repeat(2, 1fr);"
+      >
+        <div
+          data-testid="masonry-column"
+        >
+          <div
+            class="homepage-card"
+            data-testid="homepage-card"
+          >
+            <h6>
+              Title Course
+            </h6>
+            <div
+              class="homepage-card__container"
+            >
+              <p>
+                Sample Subtitle Course
+              </p>
+              <ul>
+                <li>
+                  <a
+                    data-testid="homepage-card-link"
+                    href="/context/part-1"
+                  >
+                    <span
+                      class="material-icons"
+                    >
+                      sticky_note_2
+                    </span>
+                    Wrap Use Memo
+                  </a>
+                </li>
+                <li>
+                  <a
+                    data-testid="homepage-card-link"
+                    href="/context/part-2"
+                  >
+                    <span
+                      class="material-icons"
+                    >
+                      sticky_note_2
+                    </span>
+                    Separate Context Value
+                  </a>
+                </li>
+                <li>
+                  <a
+                    data-testid="homepage-card-link"
+                    href="/context/part-3"
+                  >
+                    <span
+                      class="material-icons"
+                    >
+                      sticky_note_2
+                    </span>
+                    Colocate State
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
