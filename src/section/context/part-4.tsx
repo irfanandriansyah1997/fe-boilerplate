@@ -10,7 +10,11 @@ import {
 } from 'react';
 
 import AppGrid from '../../components/organisms/app-grid';
-import { DEFAULT_GRID_VALUE } from '../../constant';
+import {
+  DEFAULT_COLUMN,
+  DEFAULT_GRID_VALUE,
+  DEFAULT_ROW
+} from '../../constant';
 import { updateGridCellState, updateGridState } from '../../helper/grid.helper';
 import { useForceRerender } from '../../hooks/render.hooks';
 import { IGrid } from '../../interface/component';
@@ -217,6 +221,8 @@ let GridPart4: FC = () => {
   return (
     <AppGrid
       Cell={CellPart4}
+      column={DEFAULT_COLUMN}
+      row={DEFAULT_ROW}
       onUpdateGrid={onUpdateGridLayout}
       onForceRerender={forceRendered}
     />
@@ -258,7 +264,7 @@ const DogNameInputPart4: FC = () => {
  * @since 2021.10.31
  */
 const Part4: FC = () => (
-  <div>
+  <div data-testid="context-4">
     <DogProvider>
       <DogNameInputPart4 />
     </DogProvider>
