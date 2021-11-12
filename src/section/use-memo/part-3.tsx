@@ -48,6 +48,7 @@ const UseMemoPart2: FC = () => {
         top: `100px`,
         transform: `translateX(-50%)`
       }}
+      data-testid="use-memo-3"
     >
       <Autocomplete
         keyword={keyword}

@@ -40,6 +40,7 @@
   },
   "scripts": {
     "cypress:open": "cypress open",
+    "cypress:test": "cypress run",
     "start": "react-app-rewired start",
     "start:production": "node server.js",
     "build": "react-app-rewired build && compress-cra",
@@ -89,6 +90,7 @@
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
     "@cypress/webpack-preprocessor": "5.9.1",
+    "@testing-library/cypress": "8.0.1",
     "@types/react-router-dom": "5.3.1",
     "@types/react-syntax-highlighter": "13.5.2",
     "@types/react-transition-group": "4.4.4",
