@@ -40,6 +40,7 @@
   },
   "scripts": {
     "cypress:open": "cypress open",
+    "cypress:test": "cypress run",
     "start": "react-app-rewired start",
     "start:production": "node server.js",
     "build": "react-app-rewired build && compress-cra",
