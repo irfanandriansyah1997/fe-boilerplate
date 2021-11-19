@@ -4,10 +4,14 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import './style/apps.css';
 import Homepage from './section/homepage';
 
-const CodeSplittingRouter = lazy(() => import(`./section/code-splitting`));
-const UseMemoRouter = lazy(() => import(`./section/use-memo`));
-const OptimizeContext = lazy(() => import(`./section/context`));
-const SuspenseFetch = lazy(() => import(`./section/suspense-fetch`));
+const CodeSplittingRouter = lazy(
+  () => import(`./section/performance/code-splitting`)
+);
+const UseMemoRouter = lazy(() => import(`./section/performance/use-memo`));
+const OptimizeContext = lazy(() => import(`./section/performance/context`));
+const SuspenseFetch = lazy(
+  () => import(`./section/suspense-api/suspense-fetch`)
+);
 
 /**
  * Main Apps Routing
