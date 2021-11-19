@@ -3,7 +3,7 @@ import { FC, useMemo } from 'react';
 import MasonryLayout from '../../components/organisms/masonry-layout';
 import HomepageCard from './component/home-page-card';
 import style from './style/homepage.module.scss';
-import { generateSampleLink } from './helper';
+import { generateAppMenu } from './helper';
 
 /**
  * Homepage Layouting
@@ -11,7 +11,7 @@ import { generateSampleLink } from './helper';
  * @since 2021.10.15
  */
 const Homepage: FC = () => {
-  const response = useMemo(() => generateSampleLink(), []);
+  const { section } = useMemo(() => generateAppMenu(), []);
 
   return (
     <div className={style.homepage}>
@@ -22,10 +22,16 @@ const Homepage: FC = () => {
           targets React v15 to v16.
         </p>
       </div>
-      <div className={style.homepage__section} data-testid="homepage-section">
-        <h2>Performance</h2>
-        <MasonryLayout item={response} component={HomepageCard} maxGrid={4} />
-      </div>
+      {section.map(({ dataTestID, item, label }) => (
+        <div
+          className={style.homepage__section}
+          data-testid={dataTestID}
+          key={dataTestID}
+        >
+          <h2>{label}</h2>
+          <MasonryLayout item={item} component={HomepageCard} maxGrid={4} />
+        </div>
+      ))}
     </div>
   );
 };

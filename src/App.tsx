@@ -7,6 +7,7 @@ import Homepage from './section/homepage';
 const CodeSplittingRouter = lazy(() => import(`./section/code-splitting`));
 const UseMemoRouter = lazy(() => import(`./section/use-memo`));
 const OptimizeContext = lazy(() => import(`./section/context`));
+const SuspenseFetch = lazy(() => import(`./section/suspense-fetch`));
 
 /**
  * Main Apps Routing
@@ -31,6 +32,11 @@ function App() {
           <Route path="/context">
             <Suspense fallback={null}>
               <OptimizeContext />
+            </Suspense>
+          </Route>
+          <Route path="/suspense-fetch">
+            <Suspense fallback={null}>
+              <SuspenseFetch />
             </Suspense>
           </Route>
           <Route exact path="/">
