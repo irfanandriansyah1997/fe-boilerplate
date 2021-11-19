@@ -14,15 +14,16 @@ import { POKEMON_DETAIL_QUERY } from './query';
  * @since 2021.11.17
  */
 export const getPokemon = async (
-  pokemonName: string
+  pokemonName: string,
+  withCache = true
 ): Promise<IPokemonDetail> =>
-  getGraphqlQuery<Pick<Query, 'pokemon'>>(
-    POKEMON_DETAIL_QUERY,
-    {
+  getGraphqlQuery<Pick<Query, 'pokemon'>>({
+    query: POKEMON_DETAIL_QUERY,
+    variables: {
       name: pokemonName.toLowerCase()
     },
-    false
-  ).then((response) => {
+    withCache
+  }).then((response) => {
     const pokemonPayload = translateGraphqlToPokemon(response);
 
     if (verifiedIsNotEmpty(pokemonPayload)) {

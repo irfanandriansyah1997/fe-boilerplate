@@ -12,10 +12,19 @@ export interface IPokemonCardFallbackProps {
 }
 
 /**
+ * Pokemon Card Props Interface
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.11.19
+ */
+export interface IPokemonCardProps extends IPokemonDetail {
+  lazyLoadImages?: boolean;
+}
+
+/**
  * Pokemon Card Interface
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.11.19
  */
-export type IPokemonCard = FC<IPokemonDetail> & {
+export type IPokemonCard = FC<IPokemonCardProps> & {
   Fallback: FC<IPokemonCardFallbackProps>;
 };

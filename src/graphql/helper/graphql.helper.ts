@@ -1,7 +1,7 @@
 import { verifiedIsNotEmpty } from '@99/helper';
 
 import { appsCache } from '../../hooks/cache.hooks';
-import { IGraphqlPayload } from '../interface';
+import { IGraphqlPayload, IGraphqlRequest } from '../interface';
 
 /**
  * Use Query Helper
@@ -10,11 +10,11 @@ import { IGraphqlPayload } from '../interface';
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.11.17
  */
-export async function getGraphqlQuery<T = any>(
-  query: string,
-  variables: Record<string, string>,
+export async function getGraphqlQuery<T = any>({
+  query,
+  variables,
   withCache = true
-): Promise<T> {
+}: IGraphqlRequest): Promise<T> {
   const bodyPayload = JSON.stringify({
     query,
     variables

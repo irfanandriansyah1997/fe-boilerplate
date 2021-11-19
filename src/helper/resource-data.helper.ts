@@ -1,16 +1,15 @@
 import { verifiedIsNotEmpty } from '@99/helper';
 
-import { NullAble } from '../../../../interface/general';
-import { IResourcePart3 } from '../interface/part-3.interface';
+import { IResourcePayload, NullAble } from '../interface/general';
 
 /**
- * Create Resource
+ * Create Resource Data
  * @param {Promise<T>} promise - promise object
- * @returns {IResourcePart3<T>}
+ * @returns {IResourcePayload<T>}
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.11.19
  */
-export function createResource<T>(promise: Promise<T>): IResourcePart3<T> {
+export function createResource<T>(promise: Promise<T>): IResourcePayload<T> {
   let status: 'pending' | 'resolved' | 'rejected' = `pending`;
   let errorResult: NullAble<Error>;
   let resolveResult: NullAble<T>;

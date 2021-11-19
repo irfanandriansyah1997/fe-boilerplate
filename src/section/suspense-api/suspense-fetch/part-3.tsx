@@ -3,8 +3,8 @@ import { FC, Suspense } from 'react';
 import AppsError from '../../../components/molecules/error-boundary';
 import PokemonCard from '../../../components/molecules/pokemon-card';
 import { getPokemon } from '../../../graphql';
+import { createResource } from '../../../helper';
 import styles from './style/part-1.module.scss';
-import { createResource } from './helper';
 
 const pokemonResource = createResource(getPokemon(`pikachu`));
 

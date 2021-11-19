@@ -16,3 +16,14 @@ export interface IGraphqlResponse<T> {
 export type IGraphqlPayload<T> =
   | IGraphqlResponse<T>
   | Promise<IGraphqlResponse<T>>;
+
+/**
+ * Graphql Request Interface
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.11.19
+ */
+export interface IGraphqlRequest {
+  query: string;
+  variables: Record<string, string>;
+  withCache?: boolean;
+}

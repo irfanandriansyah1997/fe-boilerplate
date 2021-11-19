@@ -12,6 +12,9 @@ const OptimizeContext = lazy(() => import(`./section/performance/context`));
 const SuspenseFetch = lazy(
   () => import(`./section/suspense-api/suspense-fetch`)
 );
+const RenderAsYouFetch = lazy(
+  () => import(`./section/suspense-api/render-as-you-fetch`)
+);
 
 /**
  * Main Apps Routing
@@ -41,6 +44,11 @@ function App() {
           <Route path="/suspense-fetch">
             <Suspense fallback={null}>
               <SuspenseFetch />
+            </Suspense>
+          </Route>
+          <Route path="/render-as-you-fetch">
+            <Suspense fallback={null}>
+              <RenderAsYouFetch />
             </Suspense>
           </Route>
           <Route exact path="/">
