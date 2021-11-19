@@ -6,6 +6,7 @@ import { SIDEBAR_MENU_SUSPENSE_FETCH } from './constant';
 
 const SuspenseFetchPart1 = lazy(() => import(`./part-1`));
 const SuspenseFetchPart2 = lazy(() => import(`./part-2`));
+const SuspenseFetchPart3 = lazy(() => import(`./part-3`));
 
 /**
  * Implement Suspense Fetch Section
@@ -27,6 +28,11 @@ const SuspenseFetch: FC = () => {
           <Route path={`${match.url}/part-2`}>
             <Suspense fallback={null}>
               <SuspenseFetchPart2 />
+            </Suspense>
+          </Route>
+          <Route path={`${match.url}/part-3`}>
+            <Suspense fallback={null}>
+              <SuspenseFetchPart3 />
             </Suspense>
           </Route>
           <Route exact path={`${match.url}`}>

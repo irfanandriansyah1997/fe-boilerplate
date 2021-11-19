@@ -15,6 +15,10 @@ export const SIDEBAR_MENU_SUSPENSE_FETCH: IMenu = {
     {
       text: `Error Handling Fetch API`,
       to: `/suspense-fetch/part-2`
+    },
+    {
+      text: `Encapsulate To More Generic Method`,
+      to: `/suspense-fetch/part-3`
     }
   ],
   subtitle: `lorem ipsum dolor sim amet`,

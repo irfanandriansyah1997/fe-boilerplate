@@ -1,15 +1,15 @@
 import { FC, Suspense } from 'react';
 
 import AppsError from '../../components/molecules/error-boundary';
+import PokemonCard from '../../components/molecules/pokemon-card';
 import { getPokemon } from '../../graphql';
 import { NullAble } from '../../interface/general';
-import { IPokemonDetail } from '../../interface/pokemon';
-import PokemonCard from './component/pokemon-card';
+import { IPokemonDetail } from '../../interface/pokemon/index';
 import styles from './style/part-1.module.scss';
 
 let pokemon: NullAble<IPokemonDetail>;
 let pokemonError: NullAble<Error>;
-const pokemonPromise = getPokemon(`pikacha`).then(
+const pokemonPromise = getPokemon(`pikachu`).then(
   (p): void => {
     pokemon = p;
   },

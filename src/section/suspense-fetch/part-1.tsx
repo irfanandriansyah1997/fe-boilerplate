@@ -1,9 +1,9 @@
 import { FC, Suspense } from 'react';
 
+import PokemonCard from '../../components/molecules/pokemon-card';
 import { getPokemon } from '../../graphql';
 import { NullAble } from '../../interface/general';
 import { IPokemonDetail } from '../../interface/pokemon';
-import PokemonCard from './component/pokemon-card';
 import styles from './style/part-1.module.scss';
 
 let pokemon: NullAble<IPokemonDetail>;
