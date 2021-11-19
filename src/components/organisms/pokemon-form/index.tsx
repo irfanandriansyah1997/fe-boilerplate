@@ -7,6 +7,7 @@ import {
   useState
 } from 'react';
 
+import styles from './style/style.module.scss';
 import { IPokemonFormProps, IPokemonOptionProps } from './interface';
 
 /**
@@ -70,7 +71,7 @@ const PokemonForm: FC<IPokemonFormProps> = ({
   };
 
   return (
-    <form onSubmit={onHandleSubmit} className="pokemon-form">
+    <form onSubmit={onHandleSubmit} className={styles[`pokemon-form`]}>
       <label htmlFor="pokemonName-input">Pokemon Name</label>
       <small>
         Try{` `}
@@ -84,6 +85,7 @@ const PokemonForm: FC<IPokemonFormProps> = ({
         <input
           className="pokemonName-input"
           id="pokemonName-input"
+          autoComplete="off"
           name="pokemonName"
           placeholder="Pokemon Name..."
           value={pokemonName}

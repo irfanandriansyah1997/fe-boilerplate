@@ -1,7 +1,8 @@
-import { FC } from 'react';
+import { FC, lazy } from 'react';
 
-import PokemonCard from '../../molecules/pokemon-card';
 import { IPokemonInfoProps } from './interface';
+
+const PokemonCard = lazy(() => import(`../../molecules/pokemon-card`));
 
 /**
  * Pokemon Info Component

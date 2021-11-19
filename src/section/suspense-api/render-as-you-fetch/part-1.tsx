@@ -28,7 +28,7 @@ export const createPokemonResource = (
  * @since 2021.11.17
  */
 const RenderAsYouFetchPart1: FC = () => {
-  const [pokemonName, setPokemonName] = useState<string>(`Pikachu`);
+  const [pokemonName, setPokemonName] = useState<string>(``);
   const [pokemonResource, setPokemonResource] = useState<
     NullAble<IResourcePayload<IPokemonDetail>>
   >(undefined);
