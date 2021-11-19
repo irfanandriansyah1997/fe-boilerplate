@@ -1,6 +1,6 @@
 {
     "extends": [
-        "stylelint-prettier/recommended",
+        "stylelint-prettier/recommended"
     ],
     "plugins": [
         "stylelint-prettier",
@@ -17,7 +17,7 @@
             "custom-properties",
             "declarations"
         ],
-        selector-class-pattern: null,
+        "selector-class-pattern": null,
         "order/properties-alphabetical-order": true,
         "function-parentheses-space-inside": "never",
         "selector-max-compound-selectors": 4,

@@ -1,0 +1,38 @@
+.error-apps {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0px 16px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  width: 400px;
+
+  pre {
+    background: var(--grid);
+    border-radius: 5px;
+    margin: 0;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--blue);
+    border-radius: 20px;
+    color: var(--blue);
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    margin: 20px auto 0;
+    padding: 10px 16px;
+
+    span {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+  }
+}

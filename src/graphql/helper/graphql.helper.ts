@@ -12,7 +12,8 @@ import { IGraphqlPayload } from '../interface';
  */
 export async function getGraphqlQuery<T = any>(
   query: string,
-  variables: Record<string, string>
+  variables: Record<string, string>,
+  withCache = true
 ): Promise<T> {
   const bodyPayload = JSON.stringify({
     query,
@@ -20,10 +21,9 @@ export async function getGraphqlQuery<T = any>(
   });
 
   const { getCache, saveCache } = appsCache();
-
   const cache = await getCache(bodyPayload);
 
-  if (verifiedIsNotEmpty(cache)) {
+  if (verifiedIsNotEmpty(cache) && withCache) {
     return JSON.parse(cache as string) as T;
   }
 
@@ -54,7 +54,7 @@ export async function getGraphqlQuery<T = any>(
       }
 
       if (data) {
-        await saveCache(bodyPayload, JSON.stringify(data));
+        if (withCache) await saveCache(bodyPayload, JSON.stringify(data));
 
         return data;
       }

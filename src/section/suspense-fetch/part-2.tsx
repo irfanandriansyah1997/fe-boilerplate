@@ -1,5 +1,6 @@
 import { FC, Suspense } from 'react';
 
+import AppsError from '../../components/molecules/error-boundary';
 import { getPokemon } from '../../graphql';
 import { NullAble } from '../../interface/general';
 import { IPokemonDetail } from '../../interface/pokemon';
@@ -7,33 +8,41 @@ import PokemonCard from './component/pokemon-card';
 import styles from './style/part-1.module.scss';
 
 let pokemon: NullAble<IPokemonDetail>;
-
-const pokemonPromise = getPokemon(`pikachu`).then((p): void => {
-  pokemon = p;
-});
+let pokemonError: NullAble<Error>;
+const pokemonPromise = getPokemon(`pikacha`).then(
+  (p): void => {
+    pokemon = p;
+  },
+  (e) => {
+    if (e instanceof Error) pokemonError = e;
+  }
+);
 
 /**
- * Pokemon Card Part 1
+ * Pokemon Card Part 2
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.11.17
  */
-const PokemonCardPart1: FC = () => {
+const PokemonCardPart2: FC = () => {
+  if (pokemonError) throw pokemonError;
   if (!pokemon) throw pokemonPromise;
 
   return <PokemonCard {...pokemon} />;
 };
 
 /**
- * Part 1 Apps
+ * Part 2 Apps
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.11.17
  */
-const SuspenseFetchPart1: FC = () => (
+const SuspenseFetchPart2: FC = () => (
   <div className={styles[`suspense-fetch`]}>
-    <Suspense fallback={<div>Loading Pokemon...</div>}>
-      <PokemonCardPart1 />
-    </Suspense>
+    <AppsError>
+      <Suspense fallback={<div>Loading Pokemon...</div>}>
+        <PokemonCardPart2 />
+      </Suspense>
+    </AppsError>
   </div>
 );
 
-export default SuspenseFetchPart1;
+export default SuspenseFetchPart2;
