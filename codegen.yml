@@ -1,0 +1,9 @@
+schema:
+  - https://graphql-pokemon2.vercel.app: # path grapql core service
+      headers:
+        X-Client: Y29yZS1jbGllbnQtZm9yLXdlYgo=
+generates:
+  ./src/interface/generated/graphql/index.ts:
+    plugins:
+      - typescript
+      - typescript-operations
