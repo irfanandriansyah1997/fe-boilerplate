@@ -15,6 +15,9 @@ const SuspenseFetch = lazy(
 const RenderAsYouFetch = lazy(
   () => import(`./section/suspense-api/render-as-you-fetch`)
 );
+const CacheResource = lazy(
+  () => import(`./section/suspense-api/cache-resource`)
+);
 
 /**
  * Main Apps Routing
@@ -51,6 +54,12 @@ function App() {
               <RenderAsYouFetch />
             </Suspense>
           </Route>
+          <Route path="/cache-resource">
+            <Suspense fallback={null}>
+              <CacheResource />
+            </Suspense>
+          </Route>
+
           <Route exact path="/">
             <Homepage />
           </Route>
