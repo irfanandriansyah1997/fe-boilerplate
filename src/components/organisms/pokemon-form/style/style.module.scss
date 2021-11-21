@@ -1,0 +1,72 @@
+.pokemon-form {
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: 300px;
+
+  label {
+    color: var(--title);
+    display: flex;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  small {
+    color: var(--text);
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+    button {
+      border: 0;
+      border-radius: 20px;
+      color: var(--title);
+      cursor: pointer;
+      display: inline-block;
+      font-weight: 700;
+      margin: 0 3px;
+      padding: 0;
+      transition: all 0.3s;
+    }
+  }
+
+  div {
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+
+    input,
+    button {
+      border: 0;
+      box-sizing: border-box;
+      font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      height: 50px;
+      padding: 10px;
+    }
+
+    input {
+      background: #fff;
+      flex: 0 0 75%;
+      max-width: 75%;
+      min-width: 75%;
+      outline: none;
+      width: 75%;
+    }
+
+    button {
+      background-color: var(--blue);
+      color: #fff;
+      flex: 0 0 25%;
+      max-width: 25%;
+      min-width: 25%;
+      width: 25%;
+    }
+  }
+}

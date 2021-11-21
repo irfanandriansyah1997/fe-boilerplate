@@ -1,33 +1,43 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { IMasonryItem } from '../../../components/organisms/masonry-layout/interface';
+import { IAppMenuList } from '../interface';
 import Homepage from '..';
 
 jest.mock(`../helper/index`, () => ({
-  generateSampleLink: jest.fn().mockImplementation((): IMasonryItem[] => [
-    {
-      item: {
-        menu: [
-          {
-            text: `Wrap Use Memo`,
-            to: `/context/part-1`
-          },
-          {
-            text: `Separate Context Value`,
-            to: `/context/part-2`
-          },
-          {
-            text: `Colocate State`,
-            to: `/context/part-3`
-          }
-        ],
-        subtitle: `Sample Subtitle Course`,
-        title: `Title Course`
-      },
-      key: `key 1`
-    }
-  ])
+  generateAppMenu: jest.fn().mockImplementation(
+    (): IAppMenuList => ({
+      section: [
+        {
+          dataTestID: `homepage-section`,
+          item: [
+            {
+              item: {
+                menu: [
+                  {
+                    text: `Wrap Use Memo`,
+                    to: `/context/part-1`
+                  },
+                  {
+                    text: `Separate Context Value`,
+                    to: `/context/part-2`
+                  },
+                  {
+                    text: `Colocate State`,
+                    to: `/context/part-3`
+                  }
+                ],
+                subtitle: `Sample Subtitle Course`,
+                title: `Title Course`
+              },
+              key: `key 1`
+            }
+          ],
+          label: `Performance`
+        }
+      ]
+    })
+  )
 }));
 
 describe(`Testing Homepage Section`, () => {

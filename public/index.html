@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <link rel="stylesheet" href="https://public.urbanindo.com/fonts/Avenir/stylesheet.css" media="print" onload="this.media='all'" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet"  media="print" onload="this.media='all'" />
+    <link rel="preconnect" href="https://graphql-pokemon2.vercel.app">
     <noscript>
         <link rel="stylesheet" href="https://public.urbanindo.com/fonts/Avenir/stylesheet.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
@@ -31,6 +32,24 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React Cheatsheet</title>
+    <script>
+      window.addEventListener('error', function(e){
+        const {error} = e;
+        if (!error.captured) {
+          error.captured = true;
+          e.stopImmediatePropagation();
+          e.preventDefault();
+          // Revisit this error after the error boundary element processed it 
+          setTimeout(()=>{
+            // can be set by the error boundary error handler
+            if (!error.shouldIgnore) {
+              // but if it wasn't caught by a boundary, release it back to the wild
+              throw error;
+            }
+          })
+        }
+      });
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

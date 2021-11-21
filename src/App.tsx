@@ -4,9 +4,26 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import './style/apps.css';
 import Homepage from './section/homepage';
 
-const CodeSplittingRouter = lazy(() => import(`./section/code-splitting`));
-const UseMemoRouter = lazy(() => import(`./section/use-memo`));
-const OptimizeContext = lazy(() => import(`./section/context`));
+const CodeSplittingRouter = lazy(
+  () => import(`./section/performance/code-splitting`)
+);
+const UseMemoRouter = lazy(() => import(`./section/performance/use-memo`));
+const OptimizeContext = lazy(() => import(`./section/performance/context`));
+const SuspenseFetch = lazy(
+  () => import(`./section/suspense-api/suspense-fetch`)
+);
+const RenderAsYouFetch = lazy(
+  () => import(`./section/suspense-api/render-as-you-fetch`)
+);
+const CacheResource = lazy(
+  () => import(`./section/suspense-api/cache-resource`)
+);
+const SuspenseImage = lazy(
+  () => import(`./section/suspense-api/suspense-image`)
+);
+const SuspenseCustomHooks = lazy(
+  () => import(`./section/suspense-api/suspense-custom-hooks`)
+);
 
 /**
  * Main Apps Routing
@@ -31,6 +48,31 @@ function App() {
           <Route path="/context">
             <Suspense fallback={null}>
               <OptimizeContext />
+            </Suspense>
+          </Route>
+          <Route path="/suspense-fetch">
+            <Suspense fallback={null}>
+              <SuspenseFetch />
+            </Suspense>
+          </Route>
+          <Route path="/render-as-you-fetch">
+            <Suspense fallback={null}>
+              <RenderAsYouFetch />
+            </Suspense>
+          </Route>
+          <Route path="/cache-resource">
+            <Suspense fallback={null}>
+              <CacheResource />
+            </Suspense>
+          </Route>
+          <Route path="/suspense-image">
+            <Suspense fallback={null}>
+              <SuspenseImage />
+            </Suspense>
+          </Route>
+          <Route path="/suspense-custom-hooks">
+            <Suspense fallback={null}>
+              <SuspenseCustomHooks />
             </Suspense>
           </Route>
           <Route exact path="/">
