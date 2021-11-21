@@ -9,10 +9,10 @@ const PokemonCard = lazy(() => import(`../../molecules/pokemon-card`));
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.11.19
  */
-const PokemonInfo: FC<IPokemonInfoProps> = ({ lazyLoadImages, resource }) => {
+const PokemonInfo: FC<IPokemonInfoProps> = ({ resource, type }) => {
   const pokemon = resource.read();
 
-  return <PokemonCard lazyLoadImages={lazyLoadImages} {...pokemon} />;
+  return <PokemonCard {...pokemon} type={type} />;
 };
 
 export default PokemonInfo;

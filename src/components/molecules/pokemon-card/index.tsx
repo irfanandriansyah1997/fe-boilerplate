@@ -1,17 +1,33 @@
 import { FC } from 'react';
 
+import Image from '../../atomic/image/image-default.component';
+import ImageLazy from '../../atomic/image/image-lazy.component';
 import styles from './style/style.module.scss';
-import { IPokemonCard, IPokemonCardFallbackProps } from './interface';
+import {
+  IPokemonCard,
+  IPokemonCardFallbackProps,
+  IPokemonCardTypeEnum
+} from './interface';
 
 /**
  * Pokemon Card Component
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.11.17
  */
-const PokemonCard: IPokemonCard = ({ attack, media, name, number }) => (
+const PokemonCard: IPokemonCard = ({
+  attack,
+  media,
+  name,
+  number,
+  type = IPokemonCardTypeEnum.basic
+}) => (
   <div className={styles[`pokemon-card`]}>
     <div className={styles[`pokemon-card__images`]}>
-      <img src={media} alt={name} />
+      {type === IPokemonCardTypeEnum.basic ? (
+        <Image src={media} alt={name} />
+      ) : (
+        <ImageLazy src={media} alt={name} />
+      )}
     </div>
     <h2>
       {name}
@@ -50,7 +66,7 @@ const PokemonCardFallback: FC<IPokemonCardFallbackProps> = ({ name }) => (
       }
     ]}
     number="XX"
-    media="https://react-suspense.netlify.app/img/pokemon/fallback-pokemon.jpg"
+    media={`${process.env.REACT_APP_FALLBACK_POKEMON_URL}`}
   />
 );
 

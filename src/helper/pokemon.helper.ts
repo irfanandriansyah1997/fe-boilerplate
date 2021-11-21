@@ -54,6 +54,16 @@ export const translateGraphqlToPokemonAttack = (
 };
 
 /**
+ * Generate Pokemon Pictures
+ * @param {NullAble<string>} pokemonName - pokemon name
+ * @returns {string}
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.11.21
+ */
+export const genPokemonPictures = (pokemonName: NullAble<string>): string =>
+  `https://react-suspense.netlify.app/img/pokemon/${pokemonName?.toLowerCase()}.jpg`;
+
+/**
  * Translatr Graphql To Pokemon
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.11.17

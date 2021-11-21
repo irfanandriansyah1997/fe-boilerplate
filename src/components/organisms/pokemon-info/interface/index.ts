@@ -1,5 +1,6 @@
 import { IResourcePayload } from '../../../../interface/general';
 import { IPokemonDetail } from '../../../../interface/pokemon';
+import { IPokemonCardTypeEnum } from '../../../molecules/pokemon-card/interface';
 
 /**
  * Pokemon Info Props Interface
@@ -7,6 +8,6 @@ import { IPokemonDetail } from '../../../../interface/pokemon';
  * @since 2021.11.19
  */
 export interface IPokemonInfoProps {
-  lazyLoadImages?: boolean;
   resource: IResourcePayload<IPokemonDetail>;
+  type?: IPokemonCardTypeEnum;
 }

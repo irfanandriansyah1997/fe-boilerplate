@@ -4,3 +4,4 @@ export * from './grid.helper';
 export * from './object.helper';
 export * from './pokemon.helper';
 export * from './resource-data.helper';
+export * from './image.helper';

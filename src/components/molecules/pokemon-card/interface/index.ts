@@ -12,12 +12,22 @@ export interface IPokemonCardFallbackProps {
 }
 
 /**
+ * Pokemon Card Type Enum
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.11.21
+ */
+export enum IPokemonCardTypeEnum {
+  basic = 0,
+  lazyLoadImage = 1
+}
+
+/**
  * Pokemon Card Props Interface
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.11.19
  */
 export interface IPokemonCardProps extends IPokemonDetail {
-  lazyLoadImages?: boolean;
+  type?: IPokemonCardTypeEnum;
 }
 
 /**
