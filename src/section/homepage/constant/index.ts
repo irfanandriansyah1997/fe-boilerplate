@@ -4,6 +4,7 @@ import { SIDEBAR_MENU_CONTEXT_SECTION } from '../../performance/context/constant
 import { SIDEBAR_MENU_USE_MEMO_SECTION } from '../../performance/use-memo/constant';
 import { SIDEBAR_MENU_CACHE_RESOURCE } from '../../suspense-api/cache-resource/constant';
 import { SIDEBAR_MENU_RENDER_AS_YOU_FETCH } from '../../suspense-api/render-as-you-fetch/constant';
+import { SIDEBAR_MENU_CUSTOM_HOOKS } from '../../suspense-api/suspense-custom-hooks/constant';
 import { SIDEBAR_MENU_SUSPENSE_FETCH } from '../../suspense-api/suspense-fetch/constant';
 import { SIDEBAR_MENU_SUSPENSE_IMAGE } from '../../suspense-api/suspense-image/constant';
 
@@ -17,5 +18,6 @@ export const DEFAULT_LINK_SUSPENSE_SECTION: IMenu[] = [
   SIDEBAR_MENU_SUSPENSE_FETCH,
   SIDEBAR_MENU_RENDER_AS_YOU_FETCH,
   SIDEBAR_MENU_CACHE_RESOURCE,
-  SIDEBAR_MENU_SUSPENSE_IMAGE
+  SIDEBAR_MENU_SUSPENSE_IMAGE,
+  SIDEBAR_MENU_CUSTOM_HOOKS
 ];

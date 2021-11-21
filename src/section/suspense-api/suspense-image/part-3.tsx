@@ -59,7 +59,7 @@ export const getPokemonSource = (pokemonName: string): IPokemonCachePayload => {
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2021.11.17
  */
-const SuspenseImagePart1: FC = () => {
+const SuspenseImagePart3: FC = () => {
   const [pokemonName, setPokemonName] = useState<string>(``);
   const [pokemonResource, setPokemonResource] = useState<
     NullAble<IPokemonCachePayload>
@@ -107,4 +107,4 @@ const SuspenseImagePart1: FC = () => {
   );
 };
 
-export default SuspenseImagePart1;
+export default SuspenseImagePart3;

@@ -1,10 +1,9 @@
 import { verifiedIsNotEmpty } from '@99/helper';
-import { FC, Suspense, useEffect, useState } from 'react';
+import { FC, lazy, Suspense, useEffect, useState } from 'react';
 
 import AppsError from '../../../components/molecules/error-boundary';
 import PokemonCard from '../../../components/molecules/pokemon-card';
 import PokemonForm from '../../../components/organisms/pokemon-form';
-import PokemonInfoWithResource from '../../../components/organisms/pokemon-info-with-resource';
 import { getPokemon } from '../../../graphql';
 import {
   createResource,
@@ -16,6 +15,10 @@ import styles from './styles/part-1.module.scss';
 import { IPokemonCachePayload } from './interface';
 
 const pokemonResourceCache: Record<string, IPokemonCachePayload> = {};
+
+const PokemonInfoWithResource = lazy(
+  () => import(`../../../components/organisms/pokemon-info-with-resource`)
+);
 
 /**
  * Create Pokemon Resource
@@ -52,12 +55,12 @@ export const getPokemonSource = (pokemonName: string): IPokemonCachePayload => {
 };
 
 /**
- * Part 2 Apps
- * @author Irfan Andriansyah <irfan@99.co>
- * @since 2021.11.17
+ * Custom Hooks Pokemon Resource
+ * @returns {NullAble<IPokemonCachePayload>}
  */
-const SuspenseImagePart2: FC = () => {
-  const [pokemonName, setPokemonName] = useState<string>(``);
+function usePokemonResource(
+  pokemonName: string
+): NullAble<IPokemonCachePayload> {
   const [pokemonResource, setPokemonResource] = useState<
     NullAble<IPokemonCachePayload>
   >(undefined);
@@ -70,6 +73,18 @@ const SuspenseImagePart2: FC = () => {
 
     setPokemonResource(getPokemonSource(pokemonName));
   }, [pokemonName]);
+
+  return pokemonResource;
+}
+
+/**
+ * Part 1 Apps
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2021.11.17
+ */
+const SuspenseCustomHooksPart1: FC = () => {
+  const [pokemonName, setPokemonName] = useState<string>(``);
+  const pokemonResource = usePokemonResource(pokemonName);
 
   /**
    * Event Handler When Reset Error
@@ -104,4 +119,4 @@ const SuspenseImagePart2: FC = () => {
   );
 };
 
-export default SuspenseImagePart2;
+export default SuspenseCustomHooksPart1;

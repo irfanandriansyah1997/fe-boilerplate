@@ -21,6 +21,9 @@ const CacheResource = lazy(
 const SuspenseImage = lazy(
   () => import(`./section/suspense-api/suspense-image`)
 );
+const SuspenseCustomHooks = lazy(
+  () => import(`./section/suspense-api/suspense-custom-hooks`)
+);
 
 /**
  * Main Apps Routing
@@ -65,6 +68,11 @@ function App() {
           <Route path="/suspense-image">
             <Suspense fallback={null}>
               <SuspenseImage />
+            </Suspense>
+          </Route>
+          <Route path="/suspense-custom-hooks">
+            <Suspense fallback={null}>
+              <SuspenseCustomHooks />
             </Suspense>
           </Route>
           <Route exact path="/">
